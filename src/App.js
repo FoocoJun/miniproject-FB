@@ -1,12 +1,23 @@
+
 import "./App.css";
 import styled from "styled-components";
+
+
+// Route 연결
+import { Routes, Route } from 'react-router-dom';
+
 
 function App() {
   return (
     <AppMain>
       <MainCard>
+        <Routes>
+          <Route>
+          </Route>
+        </Routes>
       </MainCard>
     </AppMain>
+
   );
 }
 
