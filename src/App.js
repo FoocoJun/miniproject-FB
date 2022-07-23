@@ -8,8 +8,10 @@ import { useNavigate } from "react-router-dom";
 
 import FortuneCardPages from "./pages/FortuneCardPages";
 import UserPages from "./pages/UserPages";
+
 import NotFoundPage from "./pages/NotFoundPage";
 import StartingPage from "./pages/StartingPage";
+
 
 function App() {
   return (

@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
+import SelectPage from "./SelectPage";
 import NotFoundPage from "./NotFoundPage";
 
 import ResultPage from "./ResurtPage";
@@ -12,6 +13,7 @@ const FortuneCardPages = () => {
   return (
     <AppMain>
       <MainCard>
+
         <Routes>
           {/* 시작점으로서의 FortuneCardPages.js */}
           <Route index element={<WelcomePage />} />         {/*::진행 중::*/}
@@ -20,12 +22,13 @@ const FortuneCardPages = () => {
           <Route path="signin" element={<SignInPage />} />  {/*++뷰 완료++*/}
           <Route path="signup" element={<SignUpPage />} />  {/*++뷰 완료++*/}
           {/* 운세 페이지 // 선택, 일기작성 : 소현 & 운세결과 : 하준*/}
-          <Route path="select" element={null} />
+          <Route path="select" element={<SelectPage />} />
           <Route path="resurt" element={<ResultPage />} />  {/*::진행 중::*/}
           <Route path="post" element={null} />
           {/* 잘못 된 접근 페이지 */}
           <Route path="*" element={<NotFoundPage />} />     {/*::진행 중::*/}
         </Routes>
+        
       </MainCard>
     </AppMain>
   );
