@@ -11,7 +11,7 @@ const SignInPage = () => {
       <SmallTitle />
       <ComponentBox>
         <div>
-          <h1>로그인</h1>
+          <h1 style={{fontFamily: 'LeferiPoint-SpecialItalicA'}}>로그인</h1>
           <h5>
             아이디가 없으신가요?
             <Link to="/fortune/signup" style={{ textDecoration: "none" }}>
