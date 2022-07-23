@@ -52,7 +52,7 @@ const MainCard = styled.div`
       height: 426.67px;
     }
   }
-  filter: drop-shadow(50px 50px 50px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(50px 50px 50px rgba(0, 0, 0, 0.40));
 `;
 
 export default FortuneCardPages;
