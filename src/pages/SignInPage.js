@@ -9,7 +9,7 @@ const SignInPage = () => {
   return (
     <>
       <SmallTitle />
-      <SignInBox>
+      <ComponentBox>
         <div>
           <h1 style={{fontFamily: 'LeferiPoint-SpecialItalicA'}}>로그인</h1>
           <h5>
@@ -30,12 +30,12 @@ const SignInPage = () => {
         <BigButton onClick={() => navigate("/fortune/signup")}>
           로그인
         </BigButton>
-      </SignInBox>
+      </ComponentBox>
     </>
   );
 };
 
-const SignInBox = styled.div`
+const ComponentBox = styled.div`
   display: flex;
   height: 80%;
   align-items: center;
@@ -48,10 +48,14 @@ const SignInBox = styled.div`
     align-items: center;
     flex-direction: column;
     h1 {
-      margin: 15% auto 0;
+      margin: 10% auto 0 ;
+      font-family: '양진체';
+      font-weight: bold;
     }
     h5 {
-      margin: 0 auto;
+      margin: 3% auto;
+      font-size: .8rem;
+      font-weight: bold;
       span {
         color: darkorange;
       }
