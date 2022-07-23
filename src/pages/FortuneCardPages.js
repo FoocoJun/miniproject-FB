@@ -2,20 +2,33 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
 import SelectPage from "./SelectPage";
+import NotFoundPage from "./NotFoundPage";
+
+import ResultPage from "./ResurtPage";
+import SignInPage from "./SignInPage";
+import SignUpPage from "./SignUpPage";
+import WelcomePage from "./WelcomePage";
 
 const FortuneCardPages = () => {
   return (
     <AppMain>
       <MainCard>
-          <Routes>
-            {/* 회원가입과 로그인 */}
-            <Route path="signin" element={null} />
-            <Route path="signup" element={null} />
-            {/* 운세 페이지 */}
-            <Route path="select" element={<SelectPage />} />
-            <Route path="resurt" element={null} />
-            <Route path="post" element={null} />
-          </Routes>
+
+        <Routes>
+          {/* 시작점으로서의 FortuneCardPages.js */}
+          <Route index element={<WelcomePage />} />         {/*::진행 중::*/}
+          {/* 회원가입과 로그인 //  하준 */}
+          {/* 와일드카드로 제공된 자리는 그 Params로 작성 */}
+          <Route path="signin" element={<SignInPage />} />  {/*++뷰 완료++*/}
+          <Route path="signup" element={<SignUpPage />} />  {/*++뷰 완료++*/}
+          {/* 운세 페이지 // 선택, 일기작성 : 소현 & 운세결과 : 하준*/}
+          <Route path="select" element={<SelectPage />} />
+          <Route path="resurt" element={<ResultPage />} />  {/*::진행 중::*/}
+          <Route path="post" element={null} />
+          {/* 잘못 된 접근 페이지 */}
+          <Route path="*" element={<NotFoundPage />} />     {/*::진행 중::*/}
+        </Routes>
+        
       </MainCard>
     </AppMain>
   );
