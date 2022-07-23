@@ -13,7 +13,7 @@ const Text = styled.h3`
   font-family: "PyeongChangPeace-Bold";
   text-align: right;
   color: #440068;
-  font-size:1.33rem;
+  font-size:1.333rem;
   margin-right: 40px;
   margin: 18.72px 40px 18.72px 0;
 `;

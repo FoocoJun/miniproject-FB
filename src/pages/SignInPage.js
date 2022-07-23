@@ -48,10 +48,13 @@ const ComponentBox = styled.div`
     align-items: center;
     flex-direction: column;
     h1 {
-      margin: 0 auto ;
+      margin: 10% auto 0 ;
+      font-weight: bold;
     }
     h5 {
-      margin: 0 auto;
+      margin: 3% auto;
+      font-size: .8rem;
+      font-weight: bold;
       span {
         color: darkorange;
       }

@@ -76,6 +76,7 @@ const ComponentBox = styled.div`
     flex-direction: column;
     h1 {
       margin: 0 auto;
+      font-weight: bold;
     }
     h5 {
       margin: 0 auto;

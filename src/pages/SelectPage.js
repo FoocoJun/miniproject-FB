@@ -83,7 +83,7 @@ const ComponentBox = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 62.44px;
+  margin-top: 63.03px;
   div {
     display: flex;
     justify-content: center;
