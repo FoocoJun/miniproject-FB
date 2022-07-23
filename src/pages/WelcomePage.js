@@ -13,26 +13,26 @@ const WelcomePage = () => {
   
   return (
 
-    <SignInBox>
+    <ComponentBox>
       <BigTitle /> 
-      <BigButton onClick={() => navigate("/fortune/signin")}>
+      <BigButton onClick={() => navigate("/fortune/select")}>
         로그인
         {/* 로그인 된 유저에게는 로그인 -> 당신의 이야기로 바껴야함! */}
       </BigButton>
-    </SignInBox>
+    </ComponentBox>
   );
 };
 
 
 // Styled Components 적용
-const SignInBox = styled.div`
+const ComponentBox = styled.div`
   display: flex;
   height: 80%;
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
   box-sizing: border-box;
-  margin: 62.44px 0px;
+  margin: 63.03px 0px 0;
 `;
 
 const BigButton = styled.button`

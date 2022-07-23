@@ -49,7 +49,7 @@ const ResultPage = () => {
           </div>
         </>
       ) : (
-        <BigButton onClick={() => navigate("/fortune/signin")}>
+        <BigButton onClick={() => navigate("/fortune/post")}>
           일기 쓰러가기
         </BigButton>
       )}

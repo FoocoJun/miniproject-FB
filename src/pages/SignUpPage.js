@@ -13,7 +13,7 @@ const SignUpPage = () => {
           <h1>회원가입</h1>
         </div>
         <SignInInputSection>
-          <div
+          {/* <div
             style={{
               display: "flex",
               height:"40px",
@@ -46,12 +46,18 @@ const SignUpPage = () => {
             <ButtonBox>
               <button>확인</button>
             </ButtonBox>
-          </div>
+          </div> */}
+          <InputBox>
+            <input type="text" placeholder="아이디를 입력해주세요." />
+          </InputBox>
+          <InputBox>
+            <input type="text" placeholder="닉네임을 입력해주세요." />
+          </InputBox>
           <InputBox>
             <input type="password" placeholder="비밀번호를 입력해주세요." />
           </InputBox>
           <InputBox>
-            <input type="day" placeholder="생년월일을 입력해주세요." />
+            <input type="text" placeholder="생년월일을 입력해주세요." />
           </InputBox>
         </SignInInputSection>
         <BigButton onClick={() => navigate("/fortune")}>
@@ -95,7 +101,7 @@ const SignInInputSection = styled.section`
 const InputBox = styled.div`
   width: 100%;
   height: 40px;
-  margin: 2% auto;
+  margin: 5% auto;
 
   background: #ffffff;
   border: 1.5px solid #d9d9d9;

@@ -13,6 +13,7 @@ const Text = styled.h3`
   font-family: "PyeongChangPeace-Bold";
   text-align: right;
   color: #440068;
+  //레이아웃 고정 사이즈 Big 쓰는 페이지는 margin-top: 63.03px;
   font-size:1.333rem;
   margin: 18.72px 40px 18.72px 0;
 `;
