@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import NotFoundPage from "./NotFoundPage";
 
-const UserPage = () => {
+const UserPages = () => {
   return (
     <Routes>
       {/* 일기장 페이지 // 일기장 : 소현 */}
@@ -13,4 +13,4 @@ const UserPage = () => {
   );
 };
 
-export default UserPage;
+export default UserPages;

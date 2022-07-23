@@ -7,7 +7,7 @@ import { Routes, Route} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 import FortuneCardPages from "./pages/FortuneCardPages";
-import UserPage from "./pages/UserPage";
+import UserPages from "./pages/UserPages";
 import NotFoundPage from "./pages/NotFoundPage";
 import StartingPage from "./pages/StartingPage";
 
@@ -21,7 +21,7 @@ function App() {
         {/* 와일드카드 *를 이용해 다양한 페이지 작성 가능 */}
         <Route path="/fortune/*" element={<FortuneCardPages />} />
         {/* 유저 페이지 */}
-        <Route path="/user/*" element={<UserPage />} />
+        <Route path="/user/*" element={<UserPages />} />
         {/* 잘못 된 접근 페이지 */}
         {/* 위의 경로를 제외한 모든 주소를 NotFound로 제공 */}
         <Route path="*" element={<NotFoundPage />} />
