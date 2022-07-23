@@ -52,7 +52,7 @@ const SignUpPage = () => {
             <input type="password" placeholder="비밀번호를 입력해주세요." />
           </InputBox>
           <InputBox>
-            <input type="password" placeholder="생년월일을 입력해주세요." />
+            <input type="day" placeholder="생년월일을 입력해주세요." />
           </InputBox>
         </SignInInputSection>
         <BigButton onClick={() => navigate("/fortune/signin")}>
@@ -118,7 +118,6 @@ const ButtonBox = styled.div`
   margin: 5% 0 5% 5%;
 
   background: #ffffff;
-  /* border: 1.5px solid #d9d9d9; */
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 40px;
 
