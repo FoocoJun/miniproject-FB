@@ -7,7 +7,7 @@ const SelectPage = () => {
     <div style={{width:"100%", overflow:"hidden"}}>
       <Title> 선택하시오 </Title>
       <ImgBox>
-        <div></div>
+        <div><img></img></div>
         <div></div>
         
       </ImgBox>

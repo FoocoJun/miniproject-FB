@@ -17,7 +17,7 @@ const WelcomePage = () => {
       <BigTitle /> 
       <BigButton onClick={() => navigate("/fortune/signin")}>
         로그인
-        {/* 로그인 된 유저에게는 로그인 -> 당신의 이야기로 바껴야함! */}
+        {/* 로그인 된 유저에게는 '로그인' -> '당신의 이야기'로 보여야함. */}
       </BigButton>
     </SignInBox>
   );
