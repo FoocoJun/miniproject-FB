@@ -119,30 +119,30 @@ const InputBox = styled.div`
   }
 `;
 
-const ButtonBox = styled.div`
-  width: 35%;
-  height: 40px;
-  margin: 5% 0 5% 5%;
+// const ButtonBox = styled.div`
+//   width: 35%;
+//   height: 40px;
+//   margin: 5% 0 5% 5%;
 
-  background: #ffffff;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 40px;
+//   background: #ffffff;
+//   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+//   border-radius: 40px;
 
-  button {
-    width: 100%;
-    height: 100%;
-    border-radius: 40px;
-    border: none;
-    background-color: #d9d9d9;
-    color: #400068;
-    font-weight: bold;
+//   button {
+//     width: 100%;
+//     height: 100%;
+//     border-radius: 40px;
+//     border: none;
+//     background-color: #d9d9d9;
+//     color: #400068;
+//     font-weight: bold;
 
-    &:hover {
-      background-color: #400068;
-      color: #fff;
-    }
-  }
-`;
+//     &:hover {
+//       background-color: #400068;
+//       color: #fff;
+//     }
+//   }
+// `;
 
 const BigButton = styled.button`
   width: 60%;

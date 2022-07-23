@@ -1,9 +1,7 @@
-import styled from "styled-components";
 import React from "react";
 
 // Route 연결
 import { Routes, Route} from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 // Bootstrap 연결
 import "bootstrap/dist/css/bootstrap.min.css";
 
