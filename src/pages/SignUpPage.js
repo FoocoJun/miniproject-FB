@@ -118,7 +118,7 @@ const ButtonBox = styled.div`
   margin: 5% 0 5% 5%;
 
   background: #ffffff;
-  border: 1.5px solid #d9d9d9;
+  /* border: 1.5px solid #d9d9d9; */
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 40px;
 
@@ -128,6 +128,8 @@ const ButtonBox = styled.div`
     border-radius: 40px;
     border: none;
     background-color: #d9d9d9;
+    color: #400068;
+    font-weight: bold;
 
     &:hover {
       background-color: #400068;
