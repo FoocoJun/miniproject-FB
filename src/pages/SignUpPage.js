@@ -54,7 +54,7 @@ const SignUpPage = () => {
             <input type="day" placeholder="생년월일을 입력해주세요." />
           </InputBox>
         </SignInInputSection>
-        <BigButton onClick={() => navigate("/fortune/result")}>
+        <BigButton onClick={() => navigate("/fortune/select")}>
           회원가입
         </BigButton>
       </ComponentBox>
@@ -75,8 +75,9 @@ const ComponentBox = styled.div`
     align-items: center;
     flex-direction: column;
     h1 {
-      margin: 0 auto;
-      font-weight: bold;
+      margin: 15% auto 0;
+      font-family: '양진체';
+      font-weight: bolder;
     }
     h5 {
       margin: 0 auto;

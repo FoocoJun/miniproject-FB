@@ -125,6 +125,7 @@ const ComponentBox = styled.div`
     }
     h5 {
       margin: 0 auto;
+      font-size:.8rem;
       color: gray;
     }
   }

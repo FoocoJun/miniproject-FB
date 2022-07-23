@@ -49,6 +49,7 @@ const ComponentBox = styled.div`
     flex-direction: column;
     h1 {
       margin: 10% auto 0 ;
+      font-family: '양진체';
       font-weight: bold;
     }
     h5 {
