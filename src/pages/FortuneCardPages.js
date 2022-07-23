@@ -7,10 +7,10 @@ const FortuneCardPages = () => {
     <AppMain>
       <MainCard>
           <Routes>
-            {/* 회원가입과 로그인 */}
+            {/* 회원가입과 로그인 //  로그인, 회원가입 : 하준 */}
             <Route path="/fortune/signin" element={null} />
             <Route path="/fortune/signup" element={null} />
-            {/* 운세 페이지 */}
+            {/* 운세 페이지 // 선택, 일기작성 : 소현 & 운세결과 : 하준*/}
             <Route path="/fortune/select" element={null} />
             <Route path="/fortune/resurt" element={null} />
             <Route path="/fortune/post" element={null} />
