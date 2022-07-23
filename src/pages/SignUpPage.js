@@ -2,19 +2,18 @@ import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import SmallTitle from "../components/buttons/SmallTitle";
-import BigTitle from "../components/buttons/BigTitle";
 
 const SignUpPage = () => {
   const navigate = useNavigate();
   return (
     <>
       <SmallTitle />
-      <SignInBox>
+      <ComponentBox>
         <div>
           <h1>회원가입</h1>
         </div>
         <SignInInputSection>
-          <div
+          {/* <div
             style={{
               display: "flex",
               height:"40px",
@@ -47,23 +46,29 @@ const SignUpPage = () => {
             <ButtonBox>
               <button>확인</button>
             </ButtonBox>
-          </div>
+          </div> */}
+          <InputBox>
+            <input type="text" placeholder="아이디를 입력해주세요." />
+          </InputBox>
+          <InputBox>
+            <input type="text" placeholder="닉네임을 입력해주세요." />
+          </InputBox>
           <InputBox>
             <input type="password" placeholder="비밀번호를 입력해주세요." />
           </InputBox>
           <InputBox>
-            <input type="password" placeholder="생년월일을 입력해주세요." />
+            <input type="text" placeholder="생년월일을 입력해주세요." />
           </InputBox>
         </SignInInputSection>
         <BigButton onClick={() => navigate("/fortune")}>
           회원가입
         </BigButton>
-      </SignInBox>
+      </ComponentBox>
     </>
   );
 };
 
-const SignInBox = styled.div`
+const ComponentBox = styled.div`
   display: flex;
   height: 80%;
   align-items: center;
@@ -76,7 +81,9 @@ const SignInBox = styled.div`
     align-items: center;
     flex-direction: column;
     h1 {
-      margin: 0 auto;
+      margin: 15% auto 0;
+      font-family: '양진체';
+      font-weight: bolder;
     }
     h5 {
       margin: 0 auto;
@@ -94,7 +101,7 @@ const SignInInputSection = styled.section`
 const InputBox = styled.div`
   width: 100%;
   height: 40px;
-  margin: 2% auto;
+  margin: 5% auto;
 
   background: #ffffff;
   border: 1.5px solid #d9d9d9;
@@ -118,7 +125,6 @@ const ButtonBox = styled.div`
   margin: 5% 0 5% 5%;
 
   background: #ffffff;
-  /* border: 1.5px solid #d9d9d9; */
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 40px;
 

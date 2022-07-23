@@ -9,7 +9,7 @@ const PostPage = () => {
     const navigate = useNavigate();
 
   return (
-    <SignInBox>
+    <ComponentBox>
         <Title> 밤의 이야기 </Title>
             <PostBox>
                 <FortuneTextBox>
@@ -19,18 +19,18 @@ const PostPage = () => {
                 <InputStyle rows="3" cols="20" wrap="hard"  placeholder="내용을 입력하세요."/>
             </PostBox>
         <MediumButton onClick={() => navigate("/fortune/signin")}> 작성하기 </MediumButton>
-    </SignInBox>
+    </ComponentBox>
   )
 }
 
-const SignInBox = styled.div`
+const ComponentBox = styled.div`
   display: flex;
   height: 80%;
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
   box-sizing: border-box;
-  margin: 50px 0px;
+  margin: 63.03px 0px 0;
 `;
 const Title = styled.h1`
   font-family: "PyeongChangPeace-Bold";
