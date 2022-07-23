@@ -1,6 +1,7 @@
 import React from "react";
-import { Route, Router, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
+import SelectPage from "./SelectPage";
 
 const FortuneCardPages = () => {
   return (
@@ -8,12 +9,12 @@ const FortuneCardPages = () => {
       <MainCard>
           <Routes>
             {/* 회원가입과 로그인 */}
-            <Route path="/fortune/signin" element={null} />
-            <Route path="/fortune/signup" element={null} />
+            <Route path="signin" element={null} />
+            <Route path="signup" element={null} />
             {/* 운세 페이지 */}
-            <Route path="/fortune/select" element={null} />
-            <Route path="/fortune/resurt" element={null} />
-            <Route path="/fortune/post" element={null} />
+            <Route path="select" element={<SelectPage />} />
+            <Route path="resurt" element={null} />
+            <Route path="post" element={null} />
           </Routes>
       </MainCard>
     </AppMain>

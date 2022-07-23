@@ -7,7 +7,7 @@ import { Routes, Route} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 import FortuneCardPages from "./pages/FortuneCardPages";
-import UserPage from "./pages/UserPage";
+import UserPages from "./pages/UserPages";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         {/* 카드 페이지 */}
         <Route path="/fortune/*" element={<FortuneCardPages />} />
         {/* 유저 페이지 */}
-        <Route path="/user/*" element={<UserPage />} />
+        <Route path="/user/*" element={<UserPages />} />
         
       </Routes>
   );
