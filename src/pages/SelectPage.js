@@ -5,7 +5,6 @@ import { Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const SelectPage = () => {
-
     
   return (
     <ComponentBox>
