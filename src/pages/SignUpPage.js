@@ -17,8 +17,8 @@ const SignUpPage = () => {
           <div
             style={{
               display: "flex",
-              // height:"40px",
-              // margin:"10% 0",
+              height:"40px",
+              margin:"4% 0",
               flexDirection: "row",
               justifyContent: "space-between",
               alignContent: "center",
@@ -34,8 +34,8 @@ const SignUpPage = () => {
           <div
             style={{
               display: "flex",
-              // height:"40px",
-              // margin:"10% 0",
+              height:"40px",
+              margin:"4% 0",
               flexDirection: "row",
               justifyContent: "space-between",
               alignContent: "center",
@@ -55,7 +55,7 @@ const SignUpPage = () => {
             <input type="password" placeholder="생년월일을 입력해주세요." />
           </InputBox>
         </SignInInputSection>
-        <BigButton onClick={() => navigate("/fortune/signin")}>
+        <BigButton onClick={() => navigate("/fortune")}>
           회원가입
         </BigButton>
       </SignInBox>
@@ -76,7 +76,7 @@ const SignInBox = styled.div`
     align-items: center;
     flex-direction: column;
     h1 {
-      margin: 5% auto 0;
+      margin: 0 auto;
     }
     h5 {
       margin: 0 auto;
@@ -94,7 +94,7 @@ const SignInInputSection = styled.section`
 const InputBox = styled.div`
   width: 100%;
   height: 40px;
-  margin: 5% auto;
+  margin: 2% auto;
 
   background: #ffffff;
   border: 1.5px solid #d9d9d9;
