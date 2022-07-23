@@ -9,7 +9,7 @@ const SignInPage = () => {
   return (
     <>
       <SmallTitle />
-      <SignInBox>
+      <ComponentBox>
         <div>
           <h1>로그인</h1>
           <h5>
@@ -30,12 +30,12 @@ const SignInPage = () => {
         <BigButton onClick={() => navigate("/fortune/signup")}>
           로그인
         </BigButton>
-      </SignInBox>
+      </ComponentBox>
     </>
   );
 };
 
-const SignInBox = styled.div`
+const ComponentBox = styled.div`
   display: flex;
   height: 80%;
   align-items: center;

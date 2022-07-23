@@ -2,14 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import SmallTitle from "../components/buttons/SmallTitle";
-import BigTitle from "../components/buttons/BigTitle";
 
 const SignUpPage = () => {
   const navigate = useNavigate();
   return (
     <>
       <SmallTitle />
-      <SignInBox>
+      <ComponentBox>
         <div>
           <h1>회원가입</h1>
         </div>
@@ -17,8 +16,8 @@ const SignUpPage = () => {
           <div
             style={{
               display: "flex",
-              // height:"40px",
-              // margin:"10% 0",
+              height:"40px",
+              margin:"4% 0",
               flexDirection: "row",
               justifyContent: "space-between",
               alignContent: "center",
@@ -34,8 +33,8 @@ const SignUpPage = () => {
           <div
             style={{
               display: "flex",
-              // height:"40px",
-              // margin:"10% 0",
+              height:"40px",
+              margin:"4% 0",
               flexDirection: "row",
               justifyContent: "space-between",
               alignContent: "center",
@@ -55,15 +54,15 @@ const SignUpPage = () => {
             <input type="day" placeholder="생년월일을 입력해주세요." />
           </InputBox>
         </SignInInputSection>
-        <BigButton onClick={() => navigate("/fortune/signin")}>
+        <BigButton onClick={() => navigate("/fortune/result")}>
           회원가입
         </BigButton>
-      </SignInBox>
+      </ComponentBox>
     </>
   );
 };
 
-const SignInBox = styled.div`
+const ComponentBox = styled.div`
   display: flex;
   height: 80%;
   align-items: center;
@@ -76,7 +75,7 @@ const SignInBox = styled.div`
     align-items: center;
     flex-direction: column;
     h1 {
-      margin: 5% auto 0;
+      margin: 0 auto;
     }
     h5 {
       margin: 0 auto;
@@ -94,7 +93,7 @@ const SignInInputSection = styled.section`
 const InputBox = styled.div`
   width: 100%;
   height: 40px;
-  margin: 5% auto;
+  margin: 2% auto;
 
   background: #ffffff;
   border: 1.5px solid #d9d9d9;
