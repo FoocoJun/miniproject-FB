@@ -8,6 +8,7 @@ import ResultPage from "./ResultPage";
 import SignInPage from "./SignInPage";
 import SignUpPage from "./SignUpPage";
 import WelcomePage from "./WelcomePage";
+import PostPage from "./PostPage";
 
 const FortuneCardPages = () => {
   return (
@@ -24,11 +25,11 @@ const FortuneCardPages = () => {
           {/* 운세 페이지 // 선택, 일기작성 : 소현 & 운세결과 : 하준*/}
           <Route path="select" element={<SelectPage />} />
           <Route path="result" element={<ResultPage />} />  {/*++뷰 완료++*/}
-          <Route path="post" element={null} />
+          <Route path="post" element={<PostPage />} />
           {/* 잘못 된 접근 페이지 */}
           <Route path="*" element={<NotFoundPage />} />     {/*::진행 중::*/}
         </Routes>
-        
+
       </MainCard>
     </AppMain>
   );

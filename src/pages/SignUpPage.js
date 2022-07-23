@@ -54,7 +54,7 @@ const SignUpPage = () => {
             <input type="day" placeholder="생년월일을 입력해주세요." />
           </InputBox>
         </SignInInputSection>
-        <BigButton onClick={() => navigate("/fortune/select")}>
+        <BigButton onClick={() => navigate("/fortune")}>
           회원가입
         </BigButton>
       </ComponentBox>
