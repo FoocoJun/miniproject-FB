@@ -1,7 +1,8 @@
 import React from "react";
+import NotFoundPage from "./NotFoundPage";
 
 const StartingPage = () => {
-  return <div>시작하기</div>;
+  return <NotFoundPage/>;
 };
 
 export default StartingPage;
