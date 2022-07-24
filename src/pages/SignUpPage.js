@@ -20,9 +20,9 @@ const SignUpPage = () => {
 
     try {
       //회원가입 요청 보내는 자리
+      navigate("/fortune/signin");
     } catch {}
 
-    navigate("/fortune/signin");
   };
 
   return (
