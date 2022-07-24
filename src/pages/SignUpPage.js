@@ -5,10 +5,30 @@ import SmallTitle from "../components/buttons/SmallTitle";
 
 const SignUpPage = () => {
   const navigate = useNavigate();
+  const signUpIdInputRef = React.useRef(null); //ID
+  const signUpNnInputRef = React.useRef(null); //Nickname
+  const signUpPwInputRef = React.useRef(null); //Password
+  const signUpBdInputRef = React.useRef(null); //Birthday
+
+  const submitToSiginUp = (e) => {
+    e.preventDefault();
+    const InputId = signUpIdInputRef.current.value;
+    const InputNn = signUpNnInputRef.current.value;
+    const InputPw = signUpPwInputRef.current.value;
+    const InputBd = signUpBdInputRef.current.value;
+    console.log(InputId, InputNn, InputPw, InputBd);
+
+    try {
+      //회원가입 요청 보내는 자리
+    } catch {}
+
+    navigate("/fortune/signin");
+  };
+
   return (
     <>
       <SmallTitle />
-      <ComponentBox>
+      <ComponentBox onSubmit={submitToSiginUp}>
         <div>
           <h1>회원가입</h1>
         </div>
@@ -48,27 +68,47 @@ const SignUpPage = () => {
             </ButtonBox>
           </div> */}
           <InputBox>
-            <input type="text" placeholder="아이디를 입력해주세요." />
+            <input
+              type="text"
+              ref={signUpIdInputRef}
+              placeholder="아이디를 입력해주세요."
+              required
+            />
           </InputBox>
           <InputBox>
-            <input type="text" placeholder="닉네임을 입력해주세요." />
+            <input
+              type="text"
+              ref={signUpNnInputRef}
+              placeholder="닉네임을 입력해주세요."
+              required
+            />
           </InputBox>
           <InputBox>
-            <input type="password" placeholder="비밀번호를 입력해주세요." />
+            <input
+              type="password"
+              ref={signUpPwInputRef}
+              placeholder="비밀번호를 입력해주세요."
+              required
+              minLength={6}
+            />
           </InputBox>
           <InputBox>
-            <input type="text" placeholder="생년월일을 입력해주세요." />
+            <input
+              type="text"
+              ref={signUpBdInputRef}
+              placeholder="생년월일(ex: 19961225)"
+              required
+              maxLength={8}
+            />
           </InputBox>
         </SignInInputSection>
-        <BigButton onClick={() => navigate("/fortune")}>
-          회원가입
-        </BigButton>
+        <BigButton>회원가입</BigButton>
       </ComponentBox>
     </>
   );
 };
 
-const ComponentBox = styled.div`
+const ComponentBox = styled.form`
   display: flex;
   height: 80%;
   align-items: center;
@@ -82,7 +122,7 @@ const ComponentBox = styled.div`
     flex-direction: column;
     h1 {
       margin: 15% auto 0;
-      font-family: '양진체';
+      font-family: "양진체";
       font-weight: bolder;
     }
     h5 {

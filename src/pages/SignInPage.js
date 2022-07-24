@@ -5,11 +5,26 @@ import SmallTitle from "../components/buttons/SmallTitle";
 
 const SignInPage = () => {
   const navigate = useNavigate();
+  const signInIdInputRef = React.useRef(null);
+  const signInPwInputRef = React.useRef(null);
+
+  const submitToSiginIn = (e) => {
+    e.preventDefault();
+    const InputId = signInIdInputRef.current.value;
+    const InputPw = signInPwInputRef.current.value;
+    console.log(InputId, InputPw);
+
+    try {
+      //로그인 요청 보내는 자리
+    } catch {}
+
+    navigate("/fortune/select");
+  };
 
   return (
     <>
       <SmallTitle />
-      <ComponentBox>
+      <ComponentBox onSubmit={submitToSiginIn}>
         <div>
           <h1>로그인</h1>
           <h5>
@@ -21,21 +36,29 @@ const SignInPage = () => {
         </div>
         <SignInInputSection>
           <InputBox>
-            <input type="text" placeholder="아이디를 입력해주세요." />
+            <input
+              type="text"
+              ref={signInIdInputRef}
+              placeholder="아이디를 입력해주세요."
+              required
+            />
           </InputBox>
           <InputBox>
-            <input type="password" placeholder="비밀번호를 입력해주세요." />
+            <input
+              type="password"
+              ref={signInPwInputRef}
+              placeholder="비밀번호를 입력해주세요."
+              required
+            />
           </InputBox>
         </SignInInputSection>
-        <BigButton onClick={() => navigate("/fortune/signup")}>
-          로그인
-        </BigButton>
+        <BigButton>로그인</BigButton>
       </ComponentBox>
     </>
   );
 };
 
-const ComponentBox = styled.div`
+const ComponentBox = styled.form`
   display: flex;
   height: 80%;
   align-items: center;
@@ -48,13 +71,13 @@ const ComponentBox = styled.div`
     align-items: center;
     flex-direction: column;
     h1 {
-      margin: 10% auto 0 ;
-      font-family: '양진체';
+      margin: 10% auto 0;
+      font-family: "양진체";
       font-weight: bold;
     }
     h5 {
       margin: 3% auto;
-      font-size: .8rem;
+      font-size: 0.8rem;
       font-weight: bold;
       span {
         color: darkorange;
@@ -81,7 +104,7 @@ const InputBox = styled.div`
     width: 80%;
     height: 100%;
     border: none;
-    font-size:.9rem;
+    font-size: 0.9rem;
     &:focus {
       outline: none;
     }

@@ -89,6 +89,7 @@ const RestrictText = styled.pre`
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
+  overflow-y: hidden;
 
   font-size: 16px;
   line-height: 18.5px;
