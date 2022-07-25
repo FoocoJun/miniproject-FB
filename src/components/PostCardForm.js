@@ -7,7 +7,7 @@ import Card from "react-bootstrap/Card";
 
 const PostCardForm = () => {
   return (
-    <Col xs={12} md={6} lg={3} className="g-4">
+    <Col xs={12} md={6} lg={4} className="g-4">
       {/* PostCard Box */}
       <Card
         style={{
@@ -51,7 +51,7 @@ const PostCardForm = () => {
  
             }}
           >
-           때리면 즐거울거야. 때리거야.때리면 즐거울거야.거야.때리면 즐거울거야.거야.때리면 즐거울거야.거야.때리면 즐거울거야.
+           .때리면 즐거울거야.거야.때리면 즐거울거야.
           </Card.Title>
 
           {/* 일기 */}
