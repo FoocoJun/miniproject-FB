@@ -9,14 +9,9 @@ const PostListPage = () => {
     <Container>
       {/* <ListBox> */}
       <Row style={{paddingTop:"50px"}}>
-        <PostCardForm />
-        <PostCardForm />
-        <PostCardForm />
-        <PostCardForm />
-        <PostCardForm />
-        <PostCardForm />
-        <PostCardForm />
-        <PostCardForm />
+        {Array(24).fill(0).map((val, idx)=>{
+          return(<PostCardForm key={'PostCardForm'+idx} idx={idx}/>)
+        })}
       </Row>
       {/* </ListBox> */}
     </Container>
