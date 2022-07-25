@@ -21,7 +21,7 @@ const PostPage = () => {
                 <InputStyle rows="3" cols="20" wrap="hard"  placeholder="내용을 입력하세요."/>
 
                 {/* 작성 버튼 */}
-                <MediumButton onClick={() => navigate("/fortune/list")}> 작성하기 </MediumButton>
+                <MediumButton onClick={() => navigate("/user/list")}> 작성하기 </MediumButton>
 
             </PostBox>
             
