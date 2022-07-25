@@ -6,7 +6,7 @@ import {useNavigate} from "react-router-dom";
 
 const PostPage = () => {
     const navigate = useNavigate();
-    
+    console.log(document.body)    
 
   return (
     <ComponentBox>
@@ -15,7 +15,7 @@ const PostPage = () => {
 
                 <FortuneTextBox>
                     {/* 운세글 get */}
-                    <FortuneText> 아침에 옆사람 뒷통수를 <br /> 때리면 즐거울거야. </FortuneText>
+                    <FortuneText> 아침에 옆사람 뒷통수를 때리면 즐거울거야. </FortuneText>
                 </FortuneTextBox>
 
                 <InputStyle rows="3" cols="20" wrap="hard"  placeholder="내용을 입력하세요."/>
@@ -51,7 +51,7 @@ const PostBox = styled.form`
     align-items: center;
 `;
 const FortuneTextBox = styled.div`
-    width: 100%;
+    width: 70%;
     height: 30%;
 
     color: #10305F;
@@ -60,6 +60,7 @@ const FortuneText = styled.h3`
     font-size: 1rem;
     text-align: center;
     font-family: '국립박물관문화재단클래식B';
+    word-break:keep-all;
 `;
 const InputStyle = styled.textarea`
     width: 100%;

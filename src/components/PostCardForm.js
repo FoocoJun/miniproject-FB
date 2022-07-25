@@ -58,11 +58,11 @@ const PostCardForm = () => {
           <Card.Text
             style={{
               width: "100%",
-              fontFamily: 'LeeSeoyun'
-              
+              height: "50%",
+              fontFamily: 'LeeSeoyun',
             }}
           >
-            거야.때리면 즐거울거야.때리면 즐거울거야.때리면 즐거울거야.때리면 즐거울거야.때리면 즐거울거야.때리면 즐거울거야.때리면 즐거울거야.s
+            때리면 즐거울거야.때리면 즐거울거야.때리면 즐거울거야.때리면 즐거울거야.때리면 즐거울거야.때리면 즐거울거야.때리면 즐거울거야.s
           </Card.Text>
         </Card.Body>
       </Card>
