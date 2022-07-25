@@ -25,26 +25,22 @@ const ResultPage = () => {
         <TitleText>밤의 이야기</TitleText>
       )}
 
-      <FortuneText>{`
-아침에 옆사람 뒷통수를
-때리면 즐거울거야
-        `}</FortuneText>
+      <FortuneText>{'아침에 옆사람 뒷통수를 때리면 즐거울거야'}</FortuneText>
 
       {NowTimeClock <= 11 && NowTimeClock > 4 ? (
         <div>
-          <RestrictText>{`
-화이화이화이자!
-        `}</RestrictText>
-          <h5 style={{ color: "gray" }}>일기는 오후 6시 이후에 작성 가능합니다.</h5>
+          <RestrictText>{'화이화이화이자!'}</RestrictText>
+          <h5 style={{ color: "gray" }}>
+            일기는 오후 6시 이후에 작성 가능합니다.
+          </h5>
         </div>
       ) : NowTimeClock <= 17 && NowTimeClock > 11 ? (
         <>
           <div>
-            <RestrictText>{`
-남아있는 하루의 즐거움을
-찾아서 떠나세요
-        `}</RestrictText>
-            <h5 style={{ color: "gray" }}>일기는 오후 6시 이후에 작성 가능합니다.</h5>
+            <RestrictText>{'남아있는 하루의 즐거움을 찾아서 떠나세요'}</RestrictText>
+            <h5 style={{ color: "gray" }}>
+              일기는 오후 6시 이후에 작성 가능합니다.
+            </h5>
           </div>
         </>
       ) : (
@@ -67,34 +63,32 @@ const TitleText = styled.h1`
   color: #440068;
 `;
 
-//가운데 absolute 정렬
-const FortuneText = styled.pre`
+const FortuneText = styled.p`
   color: #10305f;
-  font-family: "Inter";
   font-style: normal;
   font-weight: 700;
-  font-family: '국립박물관문화재단클래식B';
+  font-family: "국립박물관문화재단클래식B";
+  width: 70%;
 
   font-size: 22px;
   line-height: 24px;
   text-align: center;
-  position: absolute;
-
-  top: 36%;
+  word-break: keep-all; //한중일의 경우 띄어쓰기 기준으로 짜름~
 `;
 
-//아무것도 아님
-const RestrictText = styled.pre`
+const RestrictText = styled.p`
   color: #10305f;
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
   overflow-y: hidden;
+  width: 70%;
 
   font-size: 16px;
   line-height: 18.5px;
   text-align: center;
   margin: 0;
+  word-break: keep-all;
 `;
 
 const BigButton = styled.button`
@@ -125,7 +119,7 @@ const ComponentBox = styled.div`
     }
     h5 {
       margin: 0 auto;
-      font-size:.8rem;
+      font-size: 0.8rem;
       color: gray;
     }
   }

@@ -5,9 +5,13 @@ import { Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const ImageBox1212 = () => {
+  //구현전 예시
   const zodiacsign = "HORSE";
   React.useEffect(() => {
+    setTimeout(() => {
     try {
+      //별자리에 비해 이미지가 커서 하향조정
+      topImage.current.style.height="70%"
       switch (zodiacsign) {
         case "RAT": {
           topImage.current.src=process.env.PUBLIC_URL + "/imges/1212_01.png";
@@ -62,6 +66,7 @@ const ImageBox1212 = () => {
           return;
       }
     } catch {}
+  }, 200);
   }, []);
 
   const topImageBoxRef = React.useRef(null);
@@ -94,8 +99,8 @@ const ImageBox1212 = () => {
       <ImageBoxLink to={"/fortune/result"} ref={topImageBoxRef}>
         <Image
           ref={topImage}
-          src={process.env.PUBLIC_URL + "/imges/1212_03.png"}
-          height="70%"
+          src={process.env.PUBLIC_URL + "/imges/card_bg.png"}
+          height="100%"
         />
       </ImageBoxLink>
       <TextLink to={"/fortune/result"} ref={topText}>
