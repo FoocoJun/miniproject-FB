@@ -67,15 +67,16 @@ const FortuneText = styled.h3`
   word-break: keep-all;
 `;
 const InputStyle = styled.textarea`
-  width: 100%;
-  height: 70%;
-  border: 1px solid #eee;
-  box-shadow: -2px 4px 5px rgb(189, 189, 189);
-  border-radius: 2rem;
-  box-sizing: border-box;
-  padding: 10%;
-  resize: none;
-  margin-bottom: 8%;
+    width: 100%;
+    height: 70%;
+    border: 1px solid #eee;
+    box-shadow: -2px 4px 5px rgb(189, 189, 189);
+    border-radius: 2rem;
+    box-sizing: border-box;
+    padding: 10%;
+    resize: none;
+    margin-bottom: 8%;
+    font-family: "LeeSeoyun";
 `;
 const MediumButton = styled.button`
   width: 80%;
