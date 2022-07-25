@@ -19,6 +19,7 @@ body {
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/국립박물관문화재단클래식B.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+ 
 }
 @font-face {
   font-family: '양진체';
@@ -30,4 +31,5 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+ 
 }

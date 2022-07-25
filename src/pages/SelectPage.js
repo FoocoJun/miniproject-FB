@@ -65,7 +65,7 @@ const SelectPage = () => {
             <Image
               ref={topImage}
               src={process.env.PUBLIC_URL + "/imges/1212_01.png"}
-              height="80%"
+              height="70%"
             />
           </ImageBoxLink>
           <TextLink to={"/fortune/result"} ref={topText}>
@@ -80,8 +80,8 @@ const SelectPage = () => {
           <ImageBoxLink to={"/fortune/result"} ref={botImageBoxRef}>
             <Image
               ref={botImage}
-              src={process.env.PUBLIC_URL + "/imges/stella_01.png"}
-              height="80%"
+              src={process.env.PUBLIC_URL + "/imges/stella_06.png"}
+              height="100%"
             />
           </ImageBoxLink>
           <TextLink to={"/fortune/result"} ref={botText}>
