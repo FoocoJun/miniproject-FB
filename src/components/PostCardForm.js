@@ -7,11 +7,27 @@ import Card from "react-bootstrap/Card";
 
 const PostCardForm = () => {
   return (
-    <Col xs={12} md={6} lg={4} className="g-4">
+    <Col xs={12} md={6} lg={3} className="g-4">
+      <div
+          style={{
+            width: "15rem",
+            margin: "auto",
+            lineHeight: "0",
+            border: "none",
+            borderBottom: "none",
+            padding: "5% 0",
+            fontSize: "1rem",
+            color: "#fff",
+            fontFamily: "양진체"
+          }}
+        >
+          7월 22일
+        </div>
       {/* PostCard Box */}
       <Card
         style={{
-          width: "16rem",
+          width: "85%",
+          maxWidth: "270px",
           height: "22rem",
           margin: "auto",
           borderRadius: "30px",
@@ -19,15 +35,18 @@ const PostCardForm = () => {
         }}
       >
         {/* 날짜 */}
-        <Card.Header
+        {/* <Card
           style={{
             border: "none",
             borderBottom: "none",
-            backgroundColor: "transition",
+            padding: "5% 0",
+            fontSize: "0.8rem",
+            color: "#4B4453",
+            fontFamily: '양진체'
           }}
         >
           7월 22일
-        </Card.Header>
+        </Card> */}
 
         <Card.Body
           style={{
@@ -48,10 +67,11 @@ const PostCardForm = () => {
               fontFamily: "국립박물관문화재단클래식B",
               color: "#10305F",
               fontSize: "0.9em",
+              wordBreak: "keep-all"
  
             }}
           >
-           .때리면 즐거울거야.거야.때리면 즐거울거야.
+            오늘은 횡단보도를 건널 때 각별히 조심하도록 해 !
           </Card.Title>
 
           {/* 일기 */}
@@ -59,10 +79,13 @@ const PostCardForm = () => {
             style={{
               width: "100%",
               height: "50%",
-              fontFamily: 'LeeSeoyun',
+              fontFamily: "LeeSeoyun",
+              wordBreak: "keep-all",
+              textDecoration: "underline",
+              textUnderlinePosition:"under"
             }}
           >
-            때리면 즐거울거야.때리면 즐거울거야.때리면 즐거울거야.때리면 즐거울거야.때리면 즐거울거야.때리면 즐거울거야.때리면 즐거울거야.s
+            오늘 출근길과 퇴근길에 조심해서 횡단보도를 건넜더니, 안전하게 집까지 올 수 있었다...세상에.. 정말 용하다....^^*
           </Card.Text>
         </Card.Body>
       </Card>

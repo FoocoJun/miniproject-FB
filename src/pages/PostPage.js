@@ -60,7 +60,7 @@ const FortuneText = styled.h3`
     font-size: 1rem;
     text-align: center;
     font-family: '국립박물관문화재단클래식B';
-    word-break:keep-all;
+    word-break: keep-all;
 `;
 const InputStyle = styled.textarea`
     width: 100%;
@@ -72,7 +72,8 @@ const InputStyle = styled.textarea`
     padding: 10%;
     resize: none;
     margin-bottom: 8%;
-    font-family: LeeSeoyun;
+    font-family: "LeeSeoyun";
+    
 `;
 const MediumButton = styled.button`
   width: 80%;
