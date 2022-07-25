@@ -57,7 +57,7 @@ const PostCardForm = () => {
           <Card.Text
             style={{
               width: "100%",
-              height: "50%;"
+              height: "50%"
             }}
           >
             때렸더니 화냈다.때렸더니 화냈다.때렸더니 화냈다.

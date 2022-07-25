@@ -1,13 +1,71 @@
+import { doc, setDoc } from "firebase/firestore";
+import { getDownloadURL, ref } from "firebase/storage";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { db, storage } from "../firebase";
 
 const NotFoundPage = () => {
   const navigate = useNavigate();
+
+  // const uploadURL = () => {
+  //   const zodiac = [
+  //     "RAT",
+  //     "COW",
+  //     "TIGER",
+  //     "RABBIT",
+  //     "DRAGON",
+  //     "SNAKE",
+  //     "HORSE",
+  //     "SHEEP",
+  //     "MONKEY",
+  //     "CHICKEN",
+  //     "DOG",
+  //     "PIG",
+  //   ];
+  //   const stars = [
+  //     "AQUARIUS",
+  //     "PISCES",
+  //     "ARIES",
+  //     "TAURUS",
+  //     "GEMINI",
+  //     "CANOER",
+  //     "LEO",
+  //     "VIRGO",
+  //     "LIBRA",
+  //     "SCORPIUS",
+  //     "SAGITTARIUS",
+  //     "CAPRICORNUS",
+  //   ];
+
+    // stars.map( async(val, idx) => {
+    //   idx = idx + 1 + "";
+    //   idx = idx.split("").length == 1 ? 0 + idx : idx;
+    //   console.log(idx);
+    //   let tmpPost= {
+    //     imageURL: '',
+    //     imageName: `stars/stella_${idx}`,
+    //     imageTitle: val,
+    //   }
+    //   let ImagesRef = ref(storage, `stars/stella_${idx}.png`);
+    //   await getDownloadURL(ImagesRef).then((url) => {
+    //     tmpPost.imageURL = url;
+        
+    //     //tmp_post의 img에 url추가
+    //   });
+    //   console.log(tmpPost)
+    //   await setDoc(doc(db, "stars", val), tmpPost).then(()=>console.log('성공'));
+      
+
+  //   });
+  // };
+
   return (
     <>
       <NotFoundMessage>
-        잘못된 접근입니다.<SmallButton onClick={()=>navigate('/fortune')}>Main</SmallButton>
+        잘못된 접근입니다.
+        {/* <SmallButton onClick={() => navigate("/fortune")}>Main</SmallButton> */}
+        <SmallButton onClick={()=>navigate('/')}>Main</SmallButton>
       </NotFoundMessage>
     </>
   );

@@ -18,7 +18,6 @@ const SignInPage = () => {
       //로그인 요청 보내는 자리
       navigate("/fortune/select");
     } catch {}
-
   };
 
   return (
