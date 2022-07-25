@@ -3,70 +3,24 @@ import styled from "styled-components";
 
 import { Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../firebase";
 
 const ImageBox1212 = () => {
   //구현전 예시
   const zodiacsign = "HORSE";
-  React.useEffect(() => {
-    setTimeout(() => {
-    try {
-      //별자리에 비해 이미지가 커서 하향조정
-      topImage.current.style.height="70%"
-      switch (zodiacsign) {
-        case "RAT": {
-          topImage.current.src=process.env.PUBLIC_URL + "/imges/1212_01.png";
-          return;
-        }
-        case "COW": {
-          topImage.current.src=process.env.PUBLIC_URL + "/imges/1212_02.png";
-          return;
-        }
-        case "TIGER": {
-          topImage.current.src=process.env.PUBLIC_URL + "/imges/1212_03.png";
-          return;
-        }
-        case "RABBIT": {
-          topImage.current.src=process.env.PUBLIC_URL + "/imges/1212_04.png";
-          return;
-        }
-        case "DRAGON": {
-          topImage.current.src=process.env.PUBLIC_URL + "/imges/1212_05.png";
-          return;
-        }
-        case "SNAKE": {
-          topImage.current.src=process.env.PUBLIC_URL + "/imges/1212_06.png";
-          return;
-        }
-        case "HORSE": {
-          topImage.current.src=process.env.PUBLIC_URL + "/imges/1212_07.png";
-          return;
-        }
-        case "SHEEP": {
-          topImage.current.src=process.env.PUBLIC_URL + "/imges/1212_08.png";
-          return;
-        }
-        case "MONKEY": {
-          topImage.current.src=process.env.PUBLIC_URL + "/imges/1212_09.png";
-          return;
-        }
-        case "CHICKEN": {
-          topImage.current.src=process.env.PUBLIC_URL + "/imges/1212_10.png";
-          return;
-        }
-        case "DOG": {
-          topImage.current.src=process.env.PUBLIC_URL + "/imges/1212_11.png";
-          return;
-        }
-        case "PIG": {
-          topImage.current.src=process.env.PUBLIC_URL + "/imges/1212_12.png";
-          return;
-        }
 
-        default:
-          return;
-      }
-    } catch {}
-  }, 200);
+  React.useEffect(() => {
+    setTimeout(async () => {
+      try {
+        let ImgInfo = await getDoc(doc(db, "zodiac", zodiacsign));
+        topImage.current.src = ImgInfo.data().imageURL;
+        setTimeout(() => {
+          topImage.current.style.height = "70%";
+          //별자리에 비해 이미지가 커서 하향조정
+        }, 220);
+      } catch {}
+    }, 1);
   }, []);
 
   const topImageBoxRef = React.useRef(null);

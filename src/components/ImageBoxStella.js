@@ -3,79 +3,19 @@ import styled from "styled-components";
 
 import { Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../firebase";
 
 const ImageBoxStella = () => {
   const starposition = "SAGITTARIUS";
-  React.useEffect(() => {
-    setTimeout(() => {
-      try {
-        switch (starposition) {
-          case "AQUARIUS": {
-            botImage.current.src =
-              process.env.PUBLIC_URL + "/imges/stella_01.png";
-            return;
-          }
-          case "PISCES": {
-            botImage.current.src =
-              process.env.PUBLIC_URL + "/imges/stella_02.png";
-            return;
-          }
-          case "ARIES": {
-            botImage.current.src =
-              process.env.PUBLIC_URL + "/imges/stella_03.png";
-            return;
-          }
-          case "TAURUS": {
-            botImage.current.src =
-              process.env.PUBLIC_URL + "/imges/stella_04.png";
-            return;
-          }
-          case "GEMINI": {
-            botImage.current.src =
-              process.env.PUBLIC_URL + "/imges/stella_05.png";
-            return;
-          }
-          case "CANOER": {
-            botImage.current.src =
-              process.env.PUBLIC_URL + "/imges/stella_06.png";
-            return;
-          }
-          case "LEO": {
-            botImage.current.src =
-              process.env.PUBLIC_URL + "/imges/stella_07.png";
-            return;
-          }
-          case "VIRGO": {
-            botImage.current.src =
-              process.env.PUBLIC_URL + "/imges/stella_08.png";
-            return;
-          }
-          case "LIBRA": {
-            botImage.current.src =
-              process.env.PUBLIC_URL + "/imges/stella_09.png";
-            return;
-          }
-          case "SCORPIUS": {
-            botImage.current.src =
-              process.env.PUBLIC_URL + "/imges/stella_10.png";
-            return;
-          }
-          case "SAGITTARIUS": {
-            botImage.current.src =
-              process.env.PUBLIC_URL + "/imges/stella_11.png";
-            return;
-          }
-          case "CAPRICORNUS": {
-            botImage.current.src =
-              process.env.PUBLIC_URL + "/imges/stella_12.png";
-            return;
-          }
 
-          default:
-            return;
-        }
+  React.useEffect(() => {
+    setTimeout(async () => {
+      try {
+        let ImgInfo = await getDoc(doc(db, "stars", starposition));
+        botImage.current.src = ImgInfo.data().imageURL;
       } catch {}
-    }, 200);
+    }, 1);
   }, []);
 
   const botImageBoxRef = React.useRef(null);
