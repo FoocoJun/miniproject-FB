@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 
 // Route 연결
 import { Routes, Route} from "react-router-dom";
@@ -14,6 +15,7 @@ import StartingPage from "./pages/StartingPage";
 
 function App() {
   return (
+    <AppBg>
       <Routes>
         {/* 시작 페이지 */}
         {/* 분기점으로서의 App.js // 0. 자기 자신은 index로 path 표현 가능 */}
@@ -27,7 +29,17 @@ function App() {
         {/* 위의 경로를 제외한 모든 주소를 NotFound로 제공 */}
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
+    </AppBg>  
   );
 }
+
+const AppBg = styled.div`
+  height: 100%; 
+  background-image:url(/imges/bg.jpg),linear-gradient(175deg, rgba(147, 80, 158, 0.8) 0%, #440668 100%);
+  background-size: cover; 
+  background-repeat: no-repeat;
+  max-height: 100%;
+  min-height: 100vh;
+`;
 
 export default App;

@@ -1,36 +1,26 @@
 import React from "react";
-import styled from "styled-components";
-import Row from "react-bootstrap/Row";
+
+import { Row, Container } from "react-bootstrap";
 
 import PostCardForm from "../components/PostCardForm";
 
 const PostListPage = () => {
   return (
-    <ListBox>
-      <Row xs={1} md={2} lg={4} className="g-4">
+    <Container>
+      {/* <ListBox> */}
+      <Row style={{paddingTop:"50px"}}>
+        <PostCardForm />
+        <PostCardForm />
+        <PostCardForm />
+        <PostCardForm />
         <PostCardForm />
         <PostCardForm />
         <PostCardForm />
         <PostCardForm />
       </Row>
-      <Row xs={1} md={2} lg={4} className="g-4">
-        <PostCardForm />
-        <PostCardForm />
-        <PostCardForm />
-        <PostCardForm />
-      </Row>
-    </ListBox>
+      {/* </ListBox> */}
+    </Container>
   );
 };
-
-const ListBox = styled.div`
-  width: 80%;
-  height: 80%;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: red;
-`;
 
 export default PostListPage;
