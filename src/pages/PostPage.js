@@ -61,10 +61,10 @@ const FortuneTextBox = styled.div`
   color: #10305f;
 `;
 const FortuneText = styled.h3`
-  font-size: 1rem;
-  text-align: center;
-  font-family: "국립박물관문화재단클래식B";
-  word-break: keep-all;
+    font-size: 1rem;
+    text-align: center;
+    font-family: '국립박물관문화재단클래식B';
+    word-break: keep-all;
 `;
 const InputStyle = styled.textarea`
     width: 100%;
