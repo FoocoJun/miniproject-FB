@@ -18,7 +18,7 @@ const PostPage = () => {
                 </FortuneTextBox>
                 <InputStyle rows="3" cols="20" wrap="hard"  placeholder="내용을 입력하세요."/>
             </PostBox>
-        <MediumButton onClick={() => navigate("/fortune/signin")}> 작성하기 </MediumButton>
+        <MediumButton onClick={() => navigate("/fortune/list")}> 작성하기 </MediumButton>
     </ComponentBox>
   )
 }
