@@ -5,7 +5,20 @@ import Col from "react-bootstrap/Col";
 // import styled from "styled-components";
 import Card from "react-bootstrap/Card";
 
-const PostCardForm = () => {
+const PostCardForm = ({idx}) => {
+  const cardRef = React.useRef();
+  const cardReturn0 = () => {
+    cardRef.current.style.backgroundColor="rgba(255,255,255)"
+  }
+  const cardReturn1 = () => {
+    cardRef.current.style.backgroundColor=`rgba(255,255,255,${(24-idx)/24})`
+  }
+
+  React.useEffect(()=>{
+    cardRef.current.addEventListener("mouseover",cardReturn0)
+    cardRef.current.addEventListener("mouseout",cardReturn1)
+  },[])
+
   return (
     <Col xs={12} md={6} lg={3} className="g-4">
       {/* PostCard Box */}
@@ -16,7 +29,9 @@ const PostCardForm = () => {
           margin: "auto",
           borderRadius: "30px",
           textAlign: "center",
+          backgroundColor: `rgba(255,255,255,${(24-idx)/24})`
         }}
+        ref={cardRef}
       >
         {/* 날짜 */}
         <Card.Header
