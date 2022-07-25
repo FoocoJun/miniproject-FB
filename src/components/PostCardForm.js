@@ -36,8 +36,8 @@ const PostCardForm = () => {
             margin: "10% auto",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "space-Between",
             alignItems: "center",
+            justifyContent: "center"
           }}
         >
           {/* 운세 결과 */}
@@ -47,20 +47,22 @@ const PostCardForm = () => {
               height: "30%",
               fontFamily: "국립박물관문화재단클래식B",
               color: "#10305F",
-              fontSize: "0.8em"
+              fontSize: "0.9em",
+ 
             }}
           >
-            아침에 옆사람 뒷통수를 때리면 즐거울거야.
+           때리면 즐거울거야. 때리거야.때리면 즐거울거야.거야.때리면 즐거울거야.거야.때리면 즐거울거야.거야.때리면 즐거울거야.
           </Card.Title>
 
           {/* 일기 */}
           <Card.Text
             style={{
               width: "100%",
-              height: "50%"
+              height: "50%",
+              fontFamily: 'LeeSeoyun',
             }}
           >
-            때렸더니 화냈다.때렸더니 화냈다.때렸더니 화냈다.
+            때리면 즐거울거야.때리면 즐거울거야.때리면 즐거울거야.때리면 즐거울거야.때리면 즐거울거야.때리면 즐거울거야.때리면 즐거울거야.s
           </Card.Text>
         </Card.Body>
       </Card>

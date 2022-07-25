@@ -72,6 +72,7 @@ const InputStyle = styled.textarea`
     padding: 10%;
     resize: none;
     margin-bottom: 8%;
+    font-family: LeeSeoyun;
 `;
 const MediumButton = styled.button`
   width: 80%;
