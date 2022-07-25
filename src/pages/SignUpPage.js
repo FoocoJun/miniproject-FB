@@ -5,10 +5,30 @@ import SmallTitle from "../components/buttons/SmallTitle";
 
 const SignUpPage = () => {
   const navigate = useNavigate();
+  const signUpIdInputRef = React.useRef(null); //ID
+  const signUpNnInputRef = React.useRef(null); //Nickname
+  const signUpPwInputRef = React.useRef(null); //Password
+  const signUpBdInputRef = React.useRef(null); //Birthday
+
+  const submitToSiginUp = (e) => {
+    e.preventDefault();
+    const InputId = signUpIdInputRef.current.value;
+    const InputNn = signUpNnInputRef.current.value;
+    const InputPw = signUpPwInputRef.current.value;
+    const InputBd = signUpBdInputRef.current.value;
+    console.log(InputId, InputNn, InputPw, InputBd);
+
+    try {
+      //회원가입 요청 보내는 자리
+      navigate("/fortune/signin");
+    } catch {}
+
+  };
+
   return (
     <>
       <SmallTitle />
-      <ComponentBox>
+      <ComponentBox onSubmit={submitToSiginUp}>
         <div>
           <h1>회원가입</h1>
         </div>
@@ -48,27 +68,47 @@ const SignUpPage = () => {
             </ButtonBox>
           </div> */}
           <InputBox>
-            <input type="text" placeholder="아이디를 입력해주세요." />
+            <input
+              type="text"
+              ref={signUpIdInputRef}
+              placeholder="아이디를 입력해주세요."
+              required
+            />
           </InputBox>
           <InputBox>
-            <input type="text" placeholder="닉네임을 입력해주세요." />
+            <input
+              type="text"
+              ref={signUpNnInputRef}
+              placeholder="닉네임을 입력해주세요."
+              required
+            />
           </InputBox>
           <InputBox>
-            <input type="password" placeholder="비밀번호를 입력해주세요." />
+            <input
+              type="password"
+              ref={signUpPwInputRef}
+              placeholder="비밀번호를 입력해주세요."
+              required
+              minLength={6}
+            />
           </InputBox>
           <InputBox>
-            <input type="text" placeholder="생년월일을 입력해주세요." />
+            <input
+              type="text"
+              ref={signUpBdInputRef}
+              placeholder="생년월일(ex: 19961225)"
+              required
+              maxLength={8}
+            />
           </InputBox>
         </SignInInputSection>
-        <BigButton onClick={() => navigate("/fortune")}>
-          회원가입
-        </BigButton>
+        <BigButton>회원가입</BigButton>
       </ComponentBox>
     </>
   );
 };
 
-const ComponentBox = styled.div`
+const ComponentBox = styled.form`
   display: flex;
   height: 80%;
   align-items: center;
@@ -82,7 +122,7 @@ const ComponentBox = styled.div`
     flex-direction: column;
     h1 {
       margin: 15% auto 0;
-      font-family: '양진체';
+      font-family: "양진체";
       font-weight: bolder;
     }
     h5 {
@@ -119,30 +159,30 @@ const InputBox = styled.div`
   }
 `;
 
-const ButtonBox = styled.div`
-  width: 35%;
-  height: 40px;
-  margin: 5% 0 5% 5%;
+// const ButtonBox = styled.div`
+//   width: 35%;
+//   height: 40px;
+//   margin: 5% 0 5% 5%;
 
-  background: #ffffff;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 40px;
+//   background: #ffffff;
+//   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+//   border-radius: 40px;
 
-  button {
-    width: 100%;
-    height: 100%;
-    border-radius: 40px;
-    border: none;
-    background-color: #d9d9d9;
-    color: #400068;
-    font-weight: bold;
+//   button {
+//     width: 100%;
+//     height: 100%;
+//     border-radius: 40px;
+//     border: none;
+//     background-color: #d9d9d9;
+//     color: #400068;
+//     font-weight: bold;
 
-    &:hover {
-      background-color: #400068;
-      color: #fff;
-    }
-  }
-`;
+//     &:hover {
+//       background-color: #400068;
+//       color: #fff;
+//     }
+//   }
+// `;
 
 const BigButton = styled.button`
   width: 60%;

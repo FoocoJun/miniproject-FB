@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import BigTitle from "../components/buttons/BigTitle";
 
 const ResultPage = () => {
   const navigate = useNavigate();
@@ -90,6 +89,7 @@ const RestrictText = styled.pre`
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
+  overflow-y: hidden;
 
   font-size: 16px;
   line-height: 18.5px;
