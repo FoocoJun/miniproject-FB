@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Image } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import ImageBox1212 from "../components/ImageBox1212";
 import ImageBoxStella from "../components/ImageBoxStella";
 

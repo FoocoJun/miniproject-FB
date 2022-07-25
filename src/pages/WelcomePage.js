@@ -14,7 +14,10 @@ const WelcomePage = () => {
   return (
 
     <ComponentBox>
-      <BigTitle /> 
+      <BigTitle />
+      <BgBox><img src = {process.env.PUBLIC_URL + "/imges/card_bg.png"} style={{
+        height: "105%", margin: "0px auto"
+      }} /></BgBox>
       <BigButton onClick={() => navigate("/fortune/signin")}>
         로그인
         {/* 로그인 된 유저에게는 '로그인' -> '당신의 이야기'로 보여야함. */}
@@ -32,7 +35,14 @@ const ComponentBox = styled.div`
   flex-direction: column;
   justify-content: space-between;
   box-sizing: border-box;
-  margin: 63.03px 0px 0;
+  margin: 63.03px 0px 0 0px;
+ 
+`;
+const BgBox = styled.div`
+  width: 100%;
+  height: 67%;
+  overflow: hidden;
+
 `;
 
 const BigButton = styled.button`
