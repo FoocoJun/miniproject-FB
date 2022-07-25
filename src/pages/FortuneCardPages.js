@@ -27,7 +27,7 @@ const FortuneCardPages = () => {
           <Route path="result" element={<ResultPage />} />  {/*++뷰 완료++*/}
           <Route path="post" element={<PostPage />} />      {/*++뷰 완료++*/}
           {/* 잘못 된 접근 페이지 */}
-          <Route path="*" element={<NotFoundPage />} />     {/*::진행 중::*/}
+          <Route path="*" element={<NotFoundPage />} />     {/*++뷰 완료++*/}
         </Routes>
 
       </MainCard>
