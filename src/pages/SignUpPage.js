@@ -15,7 +15,17 @@ const SignUpPage = () => {
     const InputId = signUpIdInputRef.current.value;
     const InputNn = signUpNnInputRef.current.value;
     const InputPw = signUpPwInputRef.current.value;
-    const InputBd = signUpBdInputRef.current.value;
+    let InputBd = signUpBdInputRef.current.value;
+    // 이메일 유효성 검사
+    const CorrectBirthday = /[0-9]{8}/;
+    if (!CorrectBirthday.test(InputBd)){
+      alert('생일 양식을 확인해주세요. YYYYMMDD')
+      return
+    }
+    InputBd=InputBd.split('');
+    InputBd.splice(4,0,'.');
+    InputBd.splice(7,0,'.');
+    InputBd = InputBd.join('');
     console.log(InputId, InputNn, InputPw, InputBd);
 
     try {
@@ -96,7 +106,7 @@ const SignUpPage = () => {
             <input
               type="text"
               ref={signUpBdInputRef}
-              placeholder="생년월일(ex: 19961225)"
+              placeholder="생년월일(ex: 19960225)"
               required
               maxLength={8}
             />
