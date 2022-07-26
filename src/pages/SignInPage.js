@@ -1,14 +1,16 @@
 import React from "react";
 import { useNavigate, Link } from "react-router-dom";
-
-import axios from "axios";
+import { useDispatch } from "react-redux/es/exports";
+import { keepUserDataMW } from "../redux/modules/users";
 
 import styled from "styled-components";
 
 import SmallTitle from "../components/buttons/SmallTitle";
 
+
 const SignInPage = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const signInIdInputRef = React.useRef(null);
   const signInPwInputRef = React.useRef(null);
 
@@ -16,31 +18,13 @@ const SignInPage = () => {
     e.preventDefault();
     const InputId = signInIdInputRef.current.value;
     const InputPw = signInPwInputRef.current.value;
-    console.log(InputId, InputPw);
+    // 로그인 시 비밀번호가 콘솔창에 떠서 주석처리 했습니다. (7.26.)
+    //console.log(InputId, InputPw);
+
+    const userData = { username: InputId, password: InputPw };
 
     //로그인 요청 보내는 자리
-    axios({
-      method: "post",
-      url: "http://15.164.215.82/user/signin",
-      data: {
-        username: InputId,
-        password: InputPw,
-      },
-    })
-      .then((Response) => {
-        console.log(Response);
-        navigate("/fortune/select");
-      })
-      .catch((error) =>
-        alert(`
-아이디 또는 비밀번호를 잘못 입력했습니다.
-입력하신 내용을 다시 확인해주세요.
-`)
-  );
-
-    // nickname: "제발제발"
-    // starposition: "CAPRICORNUS"
-    // zodiacsign: "RAT"
+    dispatch(keepUserDataMW(userData,navigate))
   };
 
   return (

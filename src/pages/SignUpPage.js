@@ -28,6 +28,7 @@ const SignUpPage = () => {
     InputBd.splice(4, 0, ".");
     InputBd.splice(7, 0, ".");
     InputBd = InputBd.join("");
+    // 회원가입 시 비밀번호가 콘솔창에 떠서 주석처리 했습니다. (7.26.)
     console.log(InputId, InputNn, InputPw, InputBd);
 
     //회원가입 요청 보내는 자리
@@ -44,7 +45,7 @@ const SignUpPage = () => {
       }).then((Response) => console.log(Response));
       navigate("/fortune/signin");
     } catch (error) {
-      alert(error.response.data.message);
+      alert(error);
     }
   };
 
