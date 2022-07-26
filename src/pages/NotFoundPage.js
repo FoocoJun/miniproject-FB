@@ -1,9 +1,6 @@
-import { doc, setDoc } from "firebase/firestore";
-import { getDownloadURL, ref } from "firebase/storage";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { db, storage } from "../firebase";
 
 const NotFoundPage = () => {
   const navigate = useNavigate();
@@ -65,7 +62,7 @@ const NotFoundPage = () => {
       <NotFoundMessage>
         잘못된 접근입니다.
         {/* <SmallButton onClick={() => navigate("/fortune")}>Main</SmallButton> */}
-        <SmallButton onClick={()=>navigate('/')}>Main</SmallButton>
+        <SmallButton onClick={()=>navigate('/fortune')}>Main</SmallButton>
       </NotFoundMessage>
     </>
   );

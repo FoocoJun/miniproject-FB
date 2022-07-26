@@ -4,7 +4,7 @@ import styled from "styled-components";
 import ImageBox1212 from "../components/ImageBox1212";
 import ImageBoxStella from "../components/ImageBoxStella";
 
-const SelectPage = () => {
+const SelectPage = () => {  
   return (
     <ComponentBox>
       <TitleText> 선택하시오 </TitleText>
