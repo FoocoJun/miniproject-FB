@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
@@ -6,6 +7,17 @@ const ResultPage = () => {
   const navigate = useNavigate();
   const Time = new Date();
   const NowTimeClock = Time.toTimeString().substring(0, 2);
+
+  React.useEffect(() => {
+    const getFortune = async () => {
+      axios("http://15.164.215.82/user/fortune/result").then((res) => {
+        console.log(res);
+      });
+    };
+
+    getFortune();
+  }, []);
+
   return (
     <ComponentBox>
       {/* 5시~ 11시 59분 (아침) / 12시~ 17시59분 (오후) / 18시~ 04시59분 (밤) */}
@@ -24,11 +36,11 @@ const ResultPage = () => {
         <TitleText>밤의 이야기</TitleText>
       )}
 
-      <FortuneText>{'아침에 옆사람 뒷통수를 때리면 즐거울거야'}</FortuneText>
+      <FortuneText>{"아침에 옆사람 뒷통수를 때리면 즐거울거야"}</FortuneText>
 
       {NowTimeClock <= 11 && NowTimeClock > 4 ? (
         <div>
-          <RestrictText>{'화이화이화이자!'}</RestrictText>
+          <RestrictText>{"화이화이화이자!"}</RestrictText>
           <h5 style={{ color: "gray" }}>
             일기는 오후 6시 이후에 작성 가능합니다.
           </h5>
@@ -36,7 +48,9 @@ const ResultPage = () => {
       ) : NowTimeClock <= 17 && NowTimeClock > 11 ? (
         <>
           <div>
-            <RestrictText>{'남아있는 하루의 즐거움을 찾아서 떠나세요'}</RestrictText>
+            <RestrictText>
+              {"남아있는 하루의 즐거움을 찾아서 떠나세요"}
+            </RestrictText>
             <h5 style={{ color: "gray" }}>
               일기는 오후 6시 이후에 작성 가능합니다.
             </h5>
@@ -50,7 +64,6 @@ const ResultPage = () => {
     </ComponentBox>
   );
 };
-
 
 //글꼴 적용
 const TitleText = styled.h1`
