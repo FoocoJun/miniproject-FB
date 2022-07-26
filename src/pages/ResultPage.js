@@ -52,6 +52,7 @@ const ResultPage = () => {
   );
 };
 
+
 //글꼴 적용
 const TitleText = styled.h1`
   display: flex;
