@@ -23,19 +23,21 @@ const StartingPage = () => {
   return (
     <>
       <StartingBox>
-        <Typed
-          strings={textLines1}
-          typeSpeed={80}
-          loop={false}
-          showCursor={false}
-        />
-        <Typed
-          strings={textLines2}
-          typeSpeed={80}
-          startDelay={1500}
-          loop={false}
-          showCursor={false}
-        />
+          <Typed
+            strings={textLines1}
+            typeSpeed={80}
+            loop={false}
+            showCursor={false}
+            style={{fontSize:"2rem"}}
+          /> 
+          <Typed
+            strings={textLines2}
+            typeSpeed={80}
+            startDelay={1500}
+            loop={false}
+            showCursor={false}
+            style={{fontSize:"2rem"}}
+          />
         <br />
         <Typed
           strings={textTitle}
@@ -65,9 +67,7 @@ const StartingBox = styled.div`
   color: whitesmoke;
   text-shadow: 2px 2px 2px grey;
   @media (max-width: 500px) {
-
-      font-size: 10vw;
-
+    font-size: 10vw;
   }
 `;
 
@@ -76,7 +76,7 @@ const BigButton = styled.button`
   display: none;
   height: 40px;
   width: 128px;
-  font-size:1.9rem;
+  font-size: 1.9rem;
 
   background: #440068;
   color: #fff;
@@ -89,5 +89,6 @@ const BigButton = styled.button`
     background: #440040;
   }
 `;
+
 
 export default StartingPage;
