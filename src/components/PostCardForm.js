@@ -5,13 +5,13 @@ import Col from "react-bootstrap/Col";
 // import styled from "styled-components";
 import Card from "react-bootstrap/Card";
 
-const PostCardForm = ({idx}) => {
+const PostCardForm = ({idx, arrayLength}) => {
   const cardRef = React.useRef();
   const cardReturn0 = () => {
     cardRef.current.style.backgroundColor="rgba(255,255,255)"
   }
   const cardReturn1 = () => {
-    cardRef.current.style.backgroundColor=`rgba(255,255,255,${(24-idx)/24})`
+    cardRef.current.style.backgroundColor=`rgba(255,255,255,${(arrayLength-idx)/arrayLength})`
   }
 
   React.useEffect(()=>{
@@ -45,7 +45,7 @@ const PostCardForm = ({idx}) => {
           margin: "auto",
           borderRadius: "30px",
           textAlign: "center",
-          backgroundColor: `rgba(255,255,255,${(24-idx)/24})`
+          backgroundColor: `rgba(255,255,255,${(arrayLength-idx)/arrayLength})`
         }}
         ref={cardRef}
       >

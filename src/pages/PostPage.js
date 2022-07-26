@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 
 const PostPage = () => {
   const navigate = useNavigate();
-  console.log(document.body);
 
   return (
     <ComponentBox>
