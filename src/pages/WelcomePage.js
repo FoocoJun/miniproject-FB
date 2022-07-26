@@ -1,31 +1,44 @@
 import React from "react";
 import styled from "styled-components";
 
-import {useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux/es/hooks/useSelector";
 
+import { useNavigate } from "react-router-dom";
 
 // 제목 스타일 컴포넌트 연결
 import BigTitle from "../components/buttons/BigTitle";
 
 const WelcomePage = () => {
+  const userData = useSelector((state) => state.users.userData);
+  console.log(userData)
 
   const navigate = useNavigate();
-  
-  return (
 
+  return (
     <ComponentBox>
       <BigTitle />
-      <BgBox><img src = {process.env.PUBLIC_URL + "/imges/card_bg.png"} style={{
-        height: "105%", margin: "0px auto"
-      }} /></BgBox>
-      <BigButton onClick={() => navigate("/fortune/signin")}>
-        로그인
-        {/* 로그인 된 유저에게는 '로그인' -> '당신의 이야기'로 보여야함. */}
-      </BigButton>
+      <BgBox>
+        <img
+          src={process.env.PUBLIC_URL + "/imges/card_bg.png"}
+          style={{
+            height: "105%",
+            margin: "0px auto",
+          }}
+        />
+      </BgBox>
+      {userData.nickname == "" ? (
+        <BigButton onClick={() => navigate("/fortune/signin")}>
+          로그인
+          {/* 로그인 된 유저에게는 '로그인' -> '당신의 이야기'로 보여야함. */}
+        </BigButton>
+      ) : (
+        <BigButton onClick={() => navigate("/fortune/select")}>
+          당신의 이야기
+        </BigButton>
+      )}
     </ComponentBox>
   );
 };
-
 
 // Styled Components 적용
 const ComponentBox = styled.div`
@@ -36,13 +49,11 @@ const ComponentBox = styled.div`
   justify-content: space-between;
   box-sizing: border-box;
   margin: 63.03px 0px 0 0px;
- 
 `;
 const BgBox = styled.div`
   width: 100%;
   height: 67%;
   overflow: hidden;
-
 `;
 
 const BigButton = styled.button`

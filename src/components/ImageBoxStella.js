@@ -7,7 +7,8 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
 
 const ImageBoxStella = () => {
-  const starposition = "SAGITTARIUS";
+  let sessionStorage = window.sessionStorage;
+  const starposition = sessionStorage.getItem("starposition");
 
   React.useEffect(() => {
     setTimeout(async () => {

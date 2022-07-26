@@ -6,7 +6,6 @@ const ResultPage = () => {
   const navigate = useNavigate();
   const Time = new Date();
   const NowTimeClock = Time.toTimeString().substring(0, 2);
-  console.log(NowTimeClock);
   return (
     <ComponentBox>
       {/* 5시~ 11시 59분 (아침) / 12시~ 17시59분 (오후) / 18시~ 04시59분 (밤) */}

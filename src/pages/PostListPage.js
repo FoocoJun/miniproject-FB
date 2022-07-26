@@ -1,10 +1,13 @@
 import React from "react";
+import { useSelector } from "react-redux/es/hooks/useSelector";
 
 import { Row, Container } from "react-bootstrap";
 
 import PostCardForm from "../components/PostCardForm";
 
 const PostListPage = () => {
+  const userData = useSelector((state) => state.users.userData);
+  console.log(userData)
   return (
     <Container>
       {/* <ListBox> */}

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useSelector } from "react-redux/es/hooks/useSelector";
 
 import { Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -7,15 +8,17 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
 
 const ImageBox1212 = () => {
-  //구현전 예시
-  const zodiacsign = "HORSE";
+  let sessionStorage = window.sessionStorage;
+  const zodiacsign = sessionStorage.getItem("zodiacsign");
 
   React.useEffect(() => {
     setTimeout(async () => {
       try {
         let ImgInfo = await getDoc(doc(db, "zodiac", zodiacsign));
         topImage.current.src = ImgInfo.data().imageURL;
-        setTimeout(() => {
+        //220ms 이후에 작동하는데 그 사이에 버튼을 눌러 페이지가 이동되면 topImage가 없어서 에러가 나옵니다.
+        //이에 topImage?.style &&를 적용해서 해결했습니다.
+        topImage?.style && setTimeout(() => {
           topImage.current.style.height = "70%";
           //별자리에 비해 이미지가 커서 하향조정
         }, 220);
