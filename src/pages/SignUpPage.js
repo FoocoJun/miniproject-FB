@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import SmallTitle from "../components/buttons/SmallTitle";
 
+import axios from "axios";
+
 const SignUpPage = () => {
   const navigate = useNavigate();
   const signUpIdInputRef = React.useRef(null); //ID
@@ -10,7 +12,7 @@ const SignUpPage = () => {
   const signUpPwInputRef = React.useRef(null); //Password
   const signUpBdInputRef = React.useRef(null); //Birthday
 
-  const submitToSiginUp = (e) => {
+  const submitToSiginUp = async (e) => {
     e.preventDefault();
     const InputId = signUpIdInputRef.current.value;
     const InputNn = signUpNnInputRef.current.value;
@@ -18,21 +20,32 @@ const SignUpPage = () => {
     let InputBd = signUpBdInputRef.current.value;
     // 이메일 유효성 검사
     const CorrectBirthday = /[0-9]{8}/;
-    if (!CorrectBirthday.test(InputBd)){
-      alert('생일 양식을 확인해주세요. YYYYMMDD')
-      return
+    if (!CorrectBirthday.test(InputBd)) {
+      alert("생일 양식을 확인해주세요. YYYYMMDD");
+      return;
     }
-    InputBd=InputBd.split('');
-    InputBd.splice(4,0,'.');
-    InputBd.splice(7,0,'.');
-    InputBd = InputBd.join('');
+    InputBd = InputBd.split("");
+    InputBd.splice(4, 0, ".");
+    InputBd.splice(7, 0, ".");
+    InputBd = InputBd.join("");
     console.log(InputId, InputNn, InputPw, InputBd);
 
+    //회원가입 요청 보내는 자리
     try {
-      //회원가입 요청 보내는 자리
+      await axios({
+        method: "post",
+        url: "http://15.164.215.82/user/signup",
+        data: {
+          username: InputId,
+          password: InputPw,
+          nickname: InputNn,
+          dateOfBirth: InputBd,
+        },
+      }).then((Response) => console.log(Response));
       navigate("/fortune/signin");
-    } catch {}
-
+    } catch (error) {
+      alert(error.response.data.message);
+    }
   };
 
   return (

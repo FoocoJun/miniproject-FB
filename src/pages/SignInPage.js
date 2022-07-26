@@ -1,6 +1,10 @@
 import React from "react";
-import styled from "styled-components";
 import { useNavigate, Link } from "react-router-dom";
+
+import axios from "axios";
+
+import styled from "styled-components";
+
 import SmallTitle from "../components/buttons/SmallTitle";
 
 const SignInPage = () => {
@@ -14,10 +18,29 @@ const SignInPage = () => {
     const InputPw = signInPwInputRef.current.value;
     console.log(InputId, InputPw);
 
-    try {
-      //로그인 요청 보내는 자리
-      navigate("/fortune/select");
-    } catch {}
+    //로그인 요청 보내는 자리
+    axios({
+      method: "post",
+      url: "http://15.164.215.82/user/signin",
+      data: {
+        username: InputId,
+        password: InputPw,
+      },
+    })
+      .then((Response) => {
+        console.log(Response);
+        navigate("/fortune/select");
+      })
+      .catch((error) =>
+        alert(`
+아이디 또는 비밀번호를 잘못 입력했습니다.
+입력하신 내용을 다시 확인해주세요.
+`)
+  );
+
+    // nickname: "제발제발"
+    // starposition: "CAPRICORNUS"
+    // zodiacsign: "RAT"
   };
 
   return (
