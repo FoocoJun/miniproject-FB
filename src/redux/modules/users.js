@@ -25,22 +25,22 @@ export const keepUserDataMW = (userData, navigate) => {
       data: userData,
     })
       .then((Response) => {
+        navigate("/fortune");
         userData = { ...Response.data };
         dispatch(keepUserData(userData));
-        navigate("/fortune");
-
         let sessionStorage = window.sessionStorage;
         sessionStorage.setItem("nickname", userData.nickname);
         sessionStorage.setItem("starposition", userData.starposition);
         sessionStorage.setItem("zodiacsign", userData.zodiacsign);
         sessionStorage.setItem("checkdiary", userData.checkdiary);
+        
       })
-      .catch((error) =>
+      .catch((error) => {
         alert(`
       아이디 또는 비밀번호를 잘못 입력했습니다.
       입력하신 내용을 다시 확인해주세요.
-      `)
-      );
+      `);
+      });
   };
 };
 

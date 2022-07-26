@@ -19,7 +19,6 @@ function App() {
   const dispatch = useDispatch();
   
   React.useEffect(() => {
-    console.log('새로고침 세션 값 탐색합니다.')
     let sessionStorage = window.sessionStorage;
     sessionStorage.getItem("nickname") && dispatch(loadSessionDataMW());
   }, []);

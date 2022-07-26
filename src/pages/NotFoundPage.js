@@ -62,7 +62,7 @@ const NotFoundPage = () => {
       <NotFoundMessage>
         잘못된 접근입니다.
         {/* <SmallButton onClick={() => navigate("/fortune")}>Main</SmallButton> */}
-        <SmallButton onClick={()=>navigate('/')}>Main</SmallButton>
+        <SmallButton onClick={()=>navigate('/fortune')}>Main</SmallButton>
       </NotFoundMessage>
     </>
   );

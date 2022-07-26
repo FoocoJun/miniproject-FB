@@ -10,7 +10,7 @@ import BigTitle from "../components/buttons/BigTitle";
 
 const WelcomePage = () => {
   const userData = useSelector((state) => state.users.userData);
-  console.log(userData)
+  console.log(userData);
 
   const navigate = useNavigate();
 
@@ -32,7 +32,13 @@ const WelcomePage = () => {
           {/* 로그인 된 유저에게는 '로그인' -> '당신의 이야기'로 보여야함. */}
         </BigButton>
       ) : (
-        <BigButton onClick={() => navigate("/fortune/select")}>
+        <BigButton
+          onClick={() => {
+            userData.checkdiary == true
+              ? navigate("/user/list")
+              : navigate("/fortune/select");
+          }}
+        >
           당신의 이야기
         </BigButton>
       )}

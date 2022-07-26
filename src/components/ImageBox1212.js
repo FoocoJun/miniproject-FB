@@ -18,8 +18,8 @@ const ImageBox1212 = () => {
         topImage.current.src = ImgInfo.data().imageURL;
         //220ms 이후에 작동하는데 그 사이에 버튼을 눌러 페이지가 이동되면 topImage가 없어서 에러가 나옵니다.
         //이에 topImage?.style &&를 적용해서 해결했습니다.
-        topImage?.style && setTimeout(() => {
-          topImage.current.style.height = "70%";
+        setTimeout(() => {
+          topImage.current?.style &&(topImage.current.style.height = "70%");
           //별자리에 비해 이미지가 커서 하향조정
         }, 220);
       } catch {}
