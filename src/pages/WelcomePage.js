@@ -12,8 +12,8 @@ const WelcomePage = () => {
   const userData = useSelector((state) => state.users.userData);
   let sessionStorage = window.sessionStorage;
   sessionStorage.getItem("nickname");
-  console.log(!sessionStorage.getItem("checkdiary"));
-  console.log(userData);
+  // console.log(!sessionStorage.getItem("checkdiary"));
+  // console.log(userData);
 
   const navigate = useNavigate();
 

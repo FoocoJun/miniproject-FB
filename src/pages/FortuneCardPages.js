@@ -15,8 +15,8 @@ import PostPage from "./PostPage";
 const FortuneCardPages = () => {
   let sessionStorage = window.sessionStorage;
   const userData = useSelector((state) => state.users.userData);
-  console.log(sessionStorage.getItem("checkdiary"))
-  console.log(userData);
+  // console.log(sessionStorage.getItem("checkdiary"))
+  // console.log(userData);
   
   return (
     <AppMain>
