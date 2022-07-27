@@ -35,7 +35,7 @@ const SignUpPage = () => {
     try {
       await axios({
         method: "post",
-        url: "process.env.REACT_APP_DB_HOST+/user/signup",
+        url: process.env.REACT_APP_DB_HOST+"/user/signup",
         data: {
           username: InputId,
           password: InputPw,
