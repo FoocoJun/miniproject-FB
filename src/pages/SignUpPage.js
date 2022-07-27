@@ -35,7 +35,7 @@ const SignUpPage = () => {
     try {
       await axios({
         method: "post",
-        url: "http://15.164.215.82/user/signup",
+        url: "/user/signup",
         data: {
           username: InputId,
           password: InputPw,
