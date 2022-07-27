@@ -6,10 +6,11 @@ import {
 import thunk from "redux-thunk";
 
 import users from "./modules/users";
+import fortune from "./modules/fortune";
 
 const middlewares = [thunk];
 const enhancer = applyMiddleware(...middlewares);
-const rootReducer = combineReducers({ users });
+const rootReducer = combineReducers({ users, fortune });
 
 const store = createStore(rootReducer, enhancer);
 

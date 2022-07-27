@@ -3,10 +3,12 @@ import React from "react";
 import styled from "styled-components";
 
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { useSelector } from "react-redux/es/hooks/useSelector";
 
 const PostPage = () => {
   const navigate = useNavigate();
+  let sessionStorage = window.sessionStorage;
+  const fortune = sessionStorage.getItem("fortune");
 
   return (
     <ComponentBox>
@@ -14,7 +16,7 @@ const PostPage = () => {
       <PostBox>
         <FortuneTextBox>
           {/* 운세글 get */}
-          <FortuneText> 아침에 옆사람 뒷통수를 때리면 즐거울거야. </FortuneText>
+          <FortuneText> {fortune} </FortuneText>
         </FortuneTextBox>
 
         <InputStyle
