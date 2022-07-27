@@ -18,7 +18,7 @@ const ResultPage = () => {
 
   React.useEffect(() => {
     const getFortune = () => {
-      axios("/user/fortune/result").then((res) => {
+      axios(process.env.REACT_APP_DB_HOST+"/user/fortune/result").then((res) => {
         setFortune(res.data);
         dispatch(keepFortuneResult(res.data))
       }).catch((err)=>console.log(err))
