@@ -3,33 +3,87 @@ import React from "react";
 import styled from "styled-components";
 
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux/es/hooks/useSelector";
+import axios from "axios";
+import { useSelector, useDispatch } from "react-redux";
+import { updateUserData } from "../redux/modules/users";
 
 const PostPage = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const userData = useSelector((state) => state.users.userData);
+  console.log(userData);
+
   let sessionStorage = window.sessionStorage;
   const fortune = sessionStorage.getItem("fortune");
+  const contentsInputRef = React.useRef();
+
+  const submitToPost = (e) => {
+    e.preventDefault();
+
+    console.log(contentsInputRef.current.value);
+    //진행중.
+    axios({
+      method: "post",
+      url: "/user/diary",
+      data: {
+        contents: contentsInputRef.current.value,
+      },
+    })
+      .then((res) => {
+        console.log(res);
+        sessionStorage.setItem("checkdiary", true);
+        dispatch(updateUserData());
+        navigate("/user/list");
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const maxLengthCheck = ()=> {
+    if (contentsInputRef.current.value.length > 75) {
+      contentsInputRef.current.value = contentsInputRef.current.value.slice(0,75)
+    }
+  }
 
   return (
     <ComponentBox>
       <Title> 밤의 이야기 </Title>
-      <PostBox>
+      <PostBox onSubmit={submitToPost}>
         <FortuneTextBox>
           {/* 운세글 get */}
           <FortuneText> {fortune} </FortuneText>
         </FortuneTextBox>
-
-        <InputStyle
-          rows="3"
-          cols="20"
-          wrap="hard"
-          placeholder="내용을 입력하세요."
-        />
+        {userData.checkdiary === "false" || userData.checkdiary === false ? (
+          <InputStyle
+            ref={contentsInputRef}
+            rows="3"
+            cols="20"
+            wrap="hard"
+            placeholder="내용을 입력하세요."
+            onChange={maxLengthCheck}
+            required
+          />
+        ) : (
+          <InputStyle
+            ref={contentsInputRef}
+            rows="3"
+            cols="20"
+            wrap="hard"
+            placeholder="이미 작성하였습니다."
+            disabled
+          />
+        )}
 
         {/* 작성 버튼 */}
-        <MediumButton onClick={() => navigate("/user/list")}>
-          작성하기
-        </MediumButton>
+
+        {userData.checkdiary === "false" || userData.checkdiary === false ? (
+          <MediumButton>작성하기</MediumButton>
+        ) : (
+          <MediumButton onClick={() => navigate("/user/list")}>
+            {" "}
+            내 일기장{" "}
+          </MediumButton>
+        )}
       </PostBox>
     </ComponentBox>
   );
@@ -63,22 +117,22 @@ const FortuneTextBox = styled.div`
   color: #10305f;
 `;
 const FortuneText = styled.h3`
-    font-size: 1rem;
-    text-align: center;
-    font-family: '국립박물관문화재단클래식B';
-    word-break: keep-all;
+  font-size: 1rem;
+  text-align: center;
+  font-family: "국립박물관문화재단클래식B";
+  word-break: keep-all;
 `;
 const InputStyle = styled.textarea`
-    width: 100%;
-    height: 70%;
-    border: 1px solid #eee;
-    box-shadow: -2px 4px 5px rgb(189, 189, 189);
-    border-radius: 2rem;
-    box-sizing: border-box;
-    padding: 10%;
-    resize: none;
-    margin-bottom: 8%;
-    font-family: "LeeSeoyun";
+  width: 100%;
+  height: 70%;
+  border: 1px solid #eee;
+  box-shadow: -2px 4px 5px rgb(189, 189, 189);
+  border-radius: 2rem;
+  box-sizing: border-box;
+  padding: 10%;
+  resize: none;
+  margin-bottom: 8%;
+  font-family: "LeeSeoyun";
 `;
 const MediumButton = styled.button`
   width: 80%;

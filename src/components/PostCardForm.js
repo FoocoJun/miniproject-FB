@@ -5,7 +5,15 @@ import Col from "react-bootstrap/Col";
 // import styled from "styled-components";
 import Card from "react-bootstrap/Card";
 
-const PostCardForm = ({idx, arrayLength}) => {
+const PostCardForm = ({idx, arrayLength, val}) => {
+
+  let postDate=val.createdAt.slice(2,10).split('-')
+  postDate.splice(1,0,'년 ')
+  postDate.splice(3,0,'월 ')
+  postDate.splice(5,0,'일')
+  postDate = postDate.join('')
+  console.log(postDate)
+
   const cardRef = React.useRef();
   const cardReturn0 = () => {
     cardRef.current.style.backgroundColor="rgba(255,255,255)"
@@ -34,7 +42,7 @@ const PostCardForm = ({idx, arrayLength}) => {
             fontFamily: "양진체"
           }}
         >
-          7월 22일
+          {postDate}
         </div>
       {/* PostCard Box */}
       <Card
@@ -86,7 +94,7 @@ const PostCardForm = ({idx, arrayLength}) => {
  
             }}
           >
-            오늘은 횡단보도를 건널 때 각별히 조심하도록 해 !
+            {val.fortune}
           </Card.Title>
 
           {/* 일기 */}
@@ -100,7 +108,7 @@ const PostCardForm = ({idx, arrayLength}) => {
               textUnderlinePosition:"under"
             }}
           >
-            오늘 출근길과 퇴근길에 조심해서 횡단보도를 건넜더니, 안전하게 집까지 올 수 있었다...세상에.. 정말 용하다....^^*
+            {val.contents}
           </Card.Text>
         </Card.Body>
       </Card>
