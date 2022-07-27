@@ -1,17 +1,27 @@
 import axios from "axios";
 import React from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux/es/hooks/useSelector";
+
+import { keepUserDataMW } from "../redux/modules/users";
+import { keepFortuneResult } from "../redux/modules/fortune";
+
 import styled from "styled-components";
 
 const ResultPage = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const Time = new Date();
   const NowTimeClock = Time.toTimeString().substring(0, 2);
+  const [fortune,setFortune] =React.useState(null)
 
   React.useEffect(() => {
     const getFortune = async () => {
-      axios("http://15.164.215.82/user/fortune/result").then((res) => {
+      axios("/user/fortune/result").then((res) => {
         console.log(res);
+        setFortune(res.data);
+        dispatch(keepFortuneResult(res.data))
       });
     };
 
@@ -36,7 +46,7 @@ const ResultPage = () => {
         <TitleText>밤의 이야기</TitleText>
       )}
 
-      <FortuneText>{"아침에 옆사람 뒷통수를 때리면 즐거울거야"}</FortuneText>
+      <FortuneText>{fortune}</FortuneText>
 
       {NowTimeClock <= 11 && NowTimeClock > 4 ? (
         <div>

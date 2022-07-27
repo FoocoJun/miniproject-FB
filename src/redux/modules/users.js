@@ -21,7 +21,7 @@ export const keepUserDataMW = (userData, navigate) => {
   return async function (dispatch) {
     axios({
       method: "post",
-      url: "http://15.164.215.82/user/signin",
+      url: "/user/signin",
       data: userData,
     })
       .then((Response) => {

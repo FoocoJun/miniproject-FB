@@ -35,7 +35,7 @@ const SignUpPage = () => {
     try {
       await axios({
         method: "post",
-        url: "http://15.164.215.82/user/signup",
+        url: "/user/signup",
         data: {
           username: InputId,
           password: InputPw,
@@ -45,8 +45,7 @@ const SignUpPage = () => {
       }).then((Response) => console.log(Response));
       navigate("/fortune/signin");
     } catch (error) {
-      alert(error.message);
-      console.log('회원가입 실패')
+      alert(error.response.data.message);
     }
   };
 
