@@ -46,6 +46,7 @@ const SignUpPage = () => {
       navigate("/fortune/signin");
     } catch (error) {
       alert(error.response.data.message);
+      // console.log(error)
     }
   };
 

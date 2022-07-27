@@ -17,12 +17,11 @@ const ResultPage = () => {
   const [fortune,setFortune] =React.useState(null)
 
   React.useEffect(() => {
-    const getFortune = async () => {
+    const getFortune = () => {
       axios("/user/fortune/result").then((res) => {
-        console.log(res);
         setFortune(res.data);
         dispatch(keepFortuneResult(res.data))
-      });
+      }).catch((err)=>console.log(err))
     };
 
     getFortune();
@@ -40,7 +39,7 @@ const ResultPage = () => {
       )} */}
       {NowTimeClock <= 11 && NowTimeClock > 4 ? (
         <TitleText>아침의 이야기</TitleText>
-      ) : NowTimeClock <= 17 && NowTimeClock > 11 ? (
+      ) : NowTimeClock <= 13 && NowTimeClock > 11 ? (
         <TitleText>일상을 사세요</TitleText>
       ) : (
         <TitleText>밤의 이야기</TitleText>
@@ -55,7 +54,7 @@ const ResultPage = () => {
             일기는 오후 6시 이후에 작성 가능합니다.
           </h5>
         </div>
-      ) : NowTimeClock <= 17 && NowTimeClock > 11 ? (
+      ) : NowTimeClock <= 13 && NowTimeClock > 11 ? (
         <>
           <div>
             <RestrictText>
