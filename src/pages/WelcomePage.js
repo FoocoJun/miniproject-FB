@@ -10,6 +10,9 @@ import BigTitle from "../components/buttons/BigTitle";
 
 const WelcomePage = () => {
   const userData = useSelector((state) => state.users.userData);
+  let sessionStorage = window.sessionStorage;
+  sessionStorage.getItem("nickname");
+  console.log(!sessionStorage.getItem("checkdiary"));
   console.log(userData);
 
   const navigate = useNavigate();
@@ -26,18 +29,18 @@ const WelcomePage = () => {
           }}
         />
       </BgBox>
-      {userData.nickname == "" ? (
+      {!sessionStorage.getItem("nickname") ? (
         <BigButton onClick={() => navigate("/fortune/signin")}>
           로그인
           {/* 로그인 된 유저에게는 '로그인' -> '당신의 이야기'로 보여야함. */}
         </BigButton>
       ) : (
         <BigButton
-          onClick={() => {
-            userData.checkdiary == true
-              ? navigate("/user/list")
-              : navigate("/fortune/select");
-          }}
+          onClick={() =>
+            userData.checkdiary == "false" || userData.checkdiary == false
+              ? navigate("/fortune/select")
+              : navigate("/user/list")
+          }
         >
           당신의 이야기
         </BigButton>

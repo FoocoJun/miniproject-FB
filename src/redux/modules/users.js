@@ -2,17 +2,17 @@ import axios from "axios";
 
 // Actions
 const KEEP = "user/KEEP";
-const AWAY = "user/AWAY";
+const UPDATE = "user/UPDATE";
 
 const initialState = {
-  userData: { nickname: "", starposition: "", zodiacsign: "", checkdiary: "" },
+  userData: { nickname: "", starposition: "", zodiacsign: "", checkdiary: false },
 };
 
 export function keepUserData(userData) {
   return { type: KEEP, userData };
 }
-export function awayUserData(userData) {
-  return { type: AWAY, userData };
+export function updateUserData(userData) {
+  return { type: UPDATE, userData };
 }
 
 //middlewares
@@ -52,6 +52,7 @@ export const loadSessionDataMW = () => {
       starposition: sessionStorage.getItem("starposition"),
       zodiacsign: sessionStorage.getItem("zodiacsign"),
       checkdiary: sessionStorage.getItem("checkdiary"),
+      fortune: sessionStorage.getItem("fortune"),
     };
     dispatch(keepUserData(userData));
   };
@@ -64,8 +65,9 @@ export default function reducer(state = initialState, action = {}) {
     case "user/KEEP": {
       return { userData: action.userData };
     }
-    case "user/AWAY": {
-      return { userData: action.userData };
+    case "user/UPDATE": {
+      let newUserData = {...state.userData, checkdiary:true }
+      return { userData: newUserData };
     }
     // do reducer stuff
     default:
