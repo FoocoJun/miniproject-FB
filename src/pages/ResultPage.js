@@ -5,11 +5,13 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 
 import { keepUserDataMW } from "../redux/modules/users";
+import { keepFortuneResult } from "../redux/modules/fortune";
 
 import styled from "styled-components";
 
 const ResultPage = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const Time = new Date();
   const NowTimeClock = Time.toTimeString().substring(0, 2);
   const [fortune,setFortune] =React.useState(null)
@@ -19,7 +21,7 @@ const ResultPage = () => {
       axios("/user/fortune/result").then((res) => {
         console.log(res);
         setFortune(res.data);
-
+        dispatch(keepFortuneResult(res.data))
       });
     };
 
