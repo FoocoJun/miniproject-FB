@@ -12,7 +12,7 @@ const PostPage = () => {
   const dispatch = useDispatch();
 
   const userData = useSelector((state) => state.users.userData);
-  console.log(userData);
+  // console.log(userData);
 
   let sessionStorage = window.sessionStorage;
   const fortune = sessionStorage.getItem("fortune");
@@ -21,7 +21,7 @@ const PostPage = () => {
   const submitToPost = (e) => {
     e.preventDefault();
 
-    console.log(contentsInputRef.current.value);
+    // console.log(contentsInputRef.current.value);
     //진행중.
     axios({
       method: "post",
@@ -31,7 +31,7 @@ const PostPage = () => {
       },
     })
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         sessionStorage.setItem("checkdiary", true);
         dispatch(updateUserData());
         navigate("/user/list");

@@ -12,7 +12,7 @@ const PostCardForm = ({idx, arrayLength, val}) => {
   postDate.splice(3,0,'월 ')
   postDate.splice(5,0,'일')
   postDate = postDate.join('')
-  console.log(postDate)
+  // console.log(postDate)
 
   const cardRef = React.useRef();
   const cardReturn0 = () => {
