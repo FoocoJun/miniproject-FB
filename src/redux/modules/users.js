@@ -25,7 +25,6 @@ export const keepUserDataMW = (userData, navigate) => {
       data: userData,
     })
       .then((Response) => {
-        navigate("/fortune");
         userData = { ...Response.data };
         dispatch(keepUserData(userData));
         let sessionStorage = window.sessionStorage;
@@ -33,6 +32,7 @@ export const keepUserDataMW = (userData, navigate) => {
         sessionStorage.setItem("starposition", userData.starposition);
         sessionStorage.setItem("zodiacsign", userData.zodiacsign);
         sessionStorage.setItem("checkdiary", userData.checkdiary);
+        navigate("/fortune");
         
       })
       .catch(() => {

@@ -39,6 +39,12 @@ const PostPage = () => {
       .catch((err) => console.log(err));
   };
 
+  const maxLengthCheck = ()=> {
+    if (contentsInputRef.current.value.length > 75) {
+      contentsInputRef.current.value = contentsInputRef.current.value.slice(0,75)
+    }
+  }
+
   return (
     <ComponentBox>
       <Title> 밤의 이야기 </Title>
@@ -54,6 +60,7 @@ const PostPage = () => {
             cols="20"
             wrap="hard"
             placeholder="내용을 입력하세요."
+            onChange={maxLengthCheck}
             required
           />
         ) : (
