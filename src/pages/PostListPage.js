@@ -10,7 +10,7 @@ const PostListPage = () => {
   const userData = useSelector((state) => state.users.userData);
   const [listData, setListData] = React.useState([]);
   React.useEffect(() => {
-    axios(process.env.REACT_APP_DB_HOST+"/user/list").then((res) => {
+    axios(process.env.REACT_APP_DB_HOST+"/api/user/list").then((res) => {
       setListData(res.data)
     });
   },[]);

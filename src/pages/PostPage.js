@@ -25,7 +25,7 @@ const PostPage = () => {
     //진행중.
     axios({
       method: "post",
-      url: process.env.REACT_APP_DB_HOST+"/user/diary",
+      url: process.env.REACT_APP_DB_HOST+"/api/user/diary",
       data: {
         contents: contentsInputRef.current.value,
       },

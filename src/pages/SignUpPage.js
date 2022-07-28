@@ -35,7 +35,7 @@ const SignUpPage = () => {
     try {
       await axios({
         method: "post",
-        url: process.env.REACT_APP_DB_HOST+"/user/signup",
+        url: process.env.REACT_APP_DB_HOST+"/api/user/signup",
         data: {
           username: InputId,
           password: InputPw,
@@ -45,8 +45,8 @@ const SignUpPage = () => {
       }).then((Response) => console.log(Response));
       navigate("/fortune/signin");
     } catch (error) {
-      alert(error.response.data.message);
-      // console.log(error)
+      alert(error);
+      console.log(error);
     }
   };
 

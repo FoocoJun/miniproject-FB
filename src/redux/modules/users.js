@@ -21,11 +21,12 @@ export const keepUserDataMW = (userData, navigate) => {
   return async function (dispatch) {
     axios({
       method: "post",
-      url: process.env.REACT_APP_DB_HOST+"/user/signin",
+      url: process.env.REACT_APP_DB_HOST+"/api/user/signin",
       data: userData,
     })
       .then((Response) => {
         userData = { ...Response.data };
+        console.log(Response);
         dispatch(keepUserData(userData));
         let sessionStorage = window.sessionStorage;
         sessionStorage.setItem("nickname", userData.nickname);
@@ -35,11 +36,12 @@ export const keepUserDataMW = (userData, navigate) => {
         navigate("/fortune");
         
       })
-      .catch(() => {
+      .catch((error) => {
         alert(`
       아이디 또는 비밀번호를 잘못 입력했습니다.
       입력하신 내용을 다시 확인해주세요.
       `);
+      console.log(error);
       });
   };
 };
